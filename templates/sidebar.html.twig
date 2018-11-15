@@ -1,0 +1,33 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element text-center"> <span>
+                            <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg') }}" />
+                             </span>
+                    <a href="#">
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">David Williams</strong>
+                                    <span class="text-muted text-xs block">Art Director</span>
+                                </span>
+                            </span>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            <li class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
+                <a href="{{ path('home') }}"><i class="fa fa-tachometer"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+            <li class="{% if app.request.attributes.get('_route') == 'admin_users'
+                        or app.request.attributes.get('_route') == 'admin_view_user' %}active{% endif %}">
+                <a href="{{ path('admin_users') }}"><i class="fa fa-users"></i> <span class="nav-label">Utilisateurs</span>  </a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-shopping-bag"></i> <span class="nav-label">Boutiques</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
