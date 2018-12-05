@@ -24,6 +24,8 @@
             {% if app.request.attributes.get('_route') == 'admin_users'
                 or app.request.attributes.get('_route') == 'admin_view_user'
                 or app.request.attributes.get('_route') == 'admin_add_user' %}Utilisateurs{% endif %}
+            {% if app.request.attributes.get('_route') == 'admin_shops'
+                or app.request.attributes.get('_route') == 'admin_add_shop' %}Boutiques{% endif %}
         </h2>
         <ol class="breadcrumb">
             <li>
@@ -37,6 +39,8 @@
                     {% if app.request.attributes.get('_route') == 'admin_users' %}Liste des utilisateurs{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_view_user' %}Détail d'un utilisateur{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_add_user' %}Ajout d'un utilisateur{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_shops' %}Liste des boutiques{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_add_shop' %}Ajout d'une boutique{% endif %}
                 </strong>
             </li>
         </ol>
@@ -44,9 +48,15 @@
     <div class="col-sm-8">
         <div class="title-action">
             <a href="{% if app.request.attributes.get('_route') == 'admin_view_user' %}{{ path('admin_users') }}{% endif %}
-                    {% if app.request.attributes.get('_route') == 'admin_users' %}{{ path('admin_add_user') }}{% endif %}" class="btn btn-primary">
+                    {% if app.request.attributes.get('_route') == 'admin_users' %}{{ path('admin_add_user') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_shops' %}{{ path('admin_add_shop') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_add_shop' %}{{ path('admin_shops') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_add_user' %}{{ path('admin_users') }}{% endif %}" class="btn btn-primary">
                 {% if app.request.attributes.get('_route') == 'admin_users' %}Ajouter un utilisateur{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_add_user' %}Retour à la liste{% endif %}
                 {% if app.request.attributes.get('_route') == 'admin_view_user' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_shops' %}Ajouter une boutique {% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_add_shop' %}Retour à la liste {% endif %}
             </a>
         </div>
     </div>
