@@ -3,29 +3,29 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>{% block title %}ADMIN | LC Mode{% endblock %}</title>
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+        <title>{% block title %}LC Mode{% endblock %}</title>
 
         {% block stylesheets %}
             <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
             <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-            <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/style-front.css') }}" rel="stylesheet">
         {% endblock %}
     </head>
 
     <body class="">
-        <div id="wrapper">
-            {% include 'sidebar.html.twig' %}
+        <div id="wrapper" class="container">
+            {% include 'front/navbar.html.twig' %}
 
             <div id="page-wrapper" class="gray-bg">
-                {% include 'header.html.twig' %}
+               
                 <div class="wrapper wrapper-content">
                     {% block content %}
                     {% endblock %}
                 </div>
-                {% include 'footer.html.twig' %}
+                
             </div>
 
             {% block javascripts %}
@@ -33,12 +33,7 @@
                 <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
                 <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
                 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-                <script src="{{ asset('js/jquery.metisMenu.js') }}"></script>
                 <script src="{{ asset('js/jquery.slimscroll.min.js') }}"></script>
-
-                <!-- Custom and plugin javascript -->
-                <script src="{{ asset('js/inspinia.js') }}"></script>
-                <script src="{{ asset('js/pace.min.js') }}"></script>
             {% endblock %}
         </div>
     </body>

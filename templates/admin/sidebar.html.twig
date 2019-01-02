@@ -3,13 +3,13 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element text-center"> <span>
-                            <img alt="image" class="img-circle" src="{{ asset('img/profile_small.jpg') }}" />
+                            <a target="_blanck" href="{{ path('home') }}"><img alt="image" class="img-profile" width="50%" src="{{ asset('img/logo_lc_mode.png') }}" /></a>
                              </span>
                     <a href="#">
                             <span class="clear">
                                 <span class="block m-t-xs">
-                                    <strong class="font-bold">David Williams</strong>
-                                    <span class="text-muted text-xs block">Art Director</span>
+                                    <strong class="font-bold">Las Connasses</strong>
+                                    <span class="text-muted text-xs block">Super Admin</span>
                                 </span>
                             </span>
                     </a>
@@ -18,11 +18,13 @@
                     IN+
                 </div>
             </li>
-            <li class="{% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
-                <a href="{{ path('home') }}"><i class="fa fa-tachometer"></i> <span class="nav-label">Dashboard</span></a>
+            <li class="{% if app.request.attributes.get('_route') == 'dashboard' %}active{% endif %}">
+                <a href="{{ path('dashboard') }}"><i class="fa fa-tachometer"></i> <span class="nav-label">Dashboard</span></a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'admin_users'
-                        or app.request.attributes.get('_route') == 'admin_view_user' %}active{% endif %}">
+                        or app.request.attributes.get('_route') == 'admin_view_user' 
+                        or app.request.attributes.get('_route') == 'admin_edit_user'
+                        or app.request.attributes.get('_route') == 'admin_add_user' %}active{% endif %}">
                 <a href="{{ path('admin_users') }}"><i class="fa fa-users"></i> <span class="nav-label">Utilisateurs</span>  </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'admin_shops'
