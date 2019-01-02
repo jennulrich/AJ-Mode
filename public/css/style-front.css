@@ -1,0 +1,8 @@
+.navbar ul.navbar-nav{
+	list-style: none;
+}
+.btn-connexion{
+	background-color: #4e194b;
+	color: white;
+	border-radius: 3px;
+}
