@@ -5,10 +5,18 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Faker;
 
 class UserFixtures extends Fixture
 {
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
     public function load(ObjectManager $manager)
     {
         // On configure dans quelles langues nous voulons nos données
@@ -20,7 +28,8 @@ class UserFixtures extends Fixture
             $user->setFirstname($faker->firstName);
             $user->setLastname($faker->lastName);
             $user->setEmail($faker->companyEmail);
-            $user->setPassword($faker->password);
+            $user->setPassword($this->passwordEncoder->encodePassword($user,
+                    'test'));
             $user->setIsAdmin($faker->boolean);
             $manager->persist($user);
         }
