@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\User;
+use App\Entity\User2;
 use App\Form\UserType;
 use App\Manager\UserManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -60,7 +60,7 @@ class UserController extends Controller
      */
     public function addAction(Request $request): Response
     {
-        $user = new User();
+        $user = new User2();
 
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -106,7 +106,7 @@ class UserController extends Controller
      * @Route("/{id}/delete", name="admin_delete_user", requirements={"id"="\d+"})
      * @return Response
      */
-    public function DeleteAction(User $user): Response
+    public function DeleteAction(User2 $user): Response
     {
         $this->userManager->save($user);
 
