@@ -1,0 +1,75 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block content %}
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content mailbox-content">
+                        <div class="file-manager">
+                            <h5>Dossiers</h5>
+                            <ul class="folder-list m-b-md" style="padding: 0">
+                                <li {% if app.request.attributes.get('_route') == 'admin_mails' %} style="font-weight: bold" {% endif %}><a href="{{ path('admin_mails') }}"> <i class="fa fa-inbox "></i> Boîte de réception <span class="label label-warning pull-right">16</span> </a></li>
+                                <li><a href=""> <i class="fa fa-envelope-o"></i> Emails envoyés</a></li>
+                                <li><a href=""> <i class="fa fa-certificate"></i> Important</a></li>
+                                <li><a href=""> <i class="fa fa-file-text-o"></i> Brouillons <span class="label label-danger pull-right">2</span></a></li>
+                                <li><a href=""> <i class="fa fa-trash-o"></i> Corbeille</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 animated fadeInRight">
+                <div class="mail-box-header">
+
+                    <form method="get" action="index.html" class="pull-right mail-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-sm" name="search" placeholder="Rechercher un email">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-sm btn-primary">
+                                    Rechercher
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <h2>
+                        Boîte de réception (16)
+                    </h2>
+                    <div class="mail-tools tooltip-demo m-t-md">
+                        <div class="btn-group pull-right">
+                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i></button>
+                            <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i></button>
+
+                        </div>
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="left" title="Refresh inbox"><i class="fa fa-refresh"></i> Rafraîchir</button>
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Marquer comme lu"><i class="fa fa-eye"></i> </button>
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Marquer comme important"><i class="fa fa-exclamation"></i> </button>
+                        <button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Supprimer"><i class="fa fa-trash-o"></i> </button>
+
+                    </div>
+                </div>
+                <div class="mail-box">
+
+                    <table class="table table-hover table-mail">
+                        <tbody>
+                        {% for contact in contacts %}
+                        <tr class="unread">
+                            <td class="check-mail">
+                                <input type="checkbox" class="i-checks">
+                            </td>
+                            <td class="mail-ontact"><a href="{{ path('admin_view_mail', { 'id': contact.id }) }}">{{ contact.firstname }} {{ contact.lastname }}</a></td>
+                            <td class="mail-subject"><a href="{{ path('admin_view_mail', { 'id': contact.id }) }}">{{ contact.subject }}</a></td>
+                            <td class=""><i class="fa fa-paperclip"></i></td>
+                            <td class="text-right mail-date">6.10 AM</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
