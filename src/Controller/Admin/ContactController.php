@@ -63,4 +63,14 @@ class ContactController extends Controller
 
         return $this->redirectToRoute('admin_mails');
     }
+
+    /**
+     * @Route("/compose", name="admin_compose_mail")
+     * @param Request $request
+     * @return Response
+     */
+    public function composeMailAction(Request $request): Response
+    {
+        return $this->render('admin/contact/compose.html.twig');
+    }
 }

@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4295481-6d18-4155-b167-5ae07b72dc81" name="Default Changelist" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/font/summernote.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/font/summernote.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/font/summernote.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/summernote-bs3.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/css/admin/summernote.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/public/js/script.js" afterPath="$PROJECT_DIR$/public/js/script.js" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ContactController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/ContactController.php" />
-      <change beforePath="$PROJECT_DIR$/templates/front/contact/contact.html.twig" afterPath="$PROJECT_DIR$/templates/front/contact/contact.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/contact/detail.html.twig" afterPath="$PROJECT_DIR$/templates/admin/contact/detail.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/contact/list.html.twig" afterPath="$PROJECT_DIR$/templates/admin/contact/list.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/header.html.twig" afterPath="$PROJECT_DIR$/templates/admin/header.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/layout.html.twig" afterPath="$PROJECT_DIR$/templates/admin/layout.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar.html.twig" afterPath="$PROJECT_DIR$/templates/admin/sidebar.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,53 +62,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContactController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Front/ContactController.php">
+      <file leaf-file-name="ContactController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/ContactController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-              <folding>
-                <element signature="e#40#63#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="326">
+              <caret line="67" column="23" lean-forward="false" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ContactController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/MAMPHTDOCS/coleres_justes/src/AppBundle/Controller/ContactController.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Front/ContactController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="44">
+              <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/front/emails/contact.html.twig">
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state relative-caret-position="224">
+              <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Contact.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Contact.php">
+      <file leaf-file-name="compose.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/admin/contact/compose.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-352">
-              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
+            <state relative-caret-position="115">
+              <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/MAMPHTDOCS/coleres_justes/src/AppBundle/Controller/Admin/MailController.php">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/sidebar.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="44" column="73" lean-forward="false" selection-start-line="44" selection-start-column="73" selection-end-line="44" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/contact/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -116,6 +145,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>5</find>
+      <find>compse</find>
+      <find>ecrire</find>
+      <find>message</find>
+      <find>recher</find>
+      <find>summer</find>
+      <find>summernote</find>
+      <find>mail-tex</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,11 +164,19 @@
         <option value="$PROJECT_DIR$/templates/front/layout.html.twig" />
         <option value="$PROJECT_DIR$/templates/front/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/front/navbar.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Admin/ContactController.php" />
         <option value="$PROJECT_DIR$/templates/front/contact/contact.html.twig" />
         <option value="$USER_HOME$/Documents/MAMPHTDOCS/coleres_justes/app/Resources/views/front/emails/contact.html.twig" />
         <option value="$PROJECT_DIR$/templates/front/emails/contact.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/Front/ContactController.php" />
+        <option value="$PROJECT_DIR$/templates/admin/contact/list.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/contact/detail.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/ContactController.php" />
+        <option value="$PROJECT_DIR$/templates/admin/header.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/sidebar.html.twig" />
+        <option value="$USER_HOME$/Downloads/Inspinia/sources/mail_compose.html" />
+        <option value="$PROJECT_DIR$/public/js/script.js" />
+        <option value="$PROJECT_DIR$/templates/admin/layout.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/contact/compose.html.twig" />
       </list>
     </option>
   </component>
@@ -1348,19 +1392,7 @@
               <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AJ-Mode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AJ-Mode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Front" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="AJ-Mode" type="b2602c69:ProjectViewProjectNode" />
@@ -1372,33 +1404,6 @@
               <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AJ-Mode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contact" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AJ-Mode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="front" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AJ-Mode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="front" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contact" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AJ-Mode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AJ-Mode" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="front" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="emails" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -1411,6 +1416,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/admin" />
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/public/js" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1442,7 +1457,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20529000" />
+    <option name="totallyTimeSpent" value="24091000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="731" extended-state="0" />
@@ -1480,101 +1495,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../sg-test/vendor/toiba/fullcalendar-bundle/DependencyInjection/Configuration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="e#64#124#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sg-test/vendor/toiba/fullcalendar-bundle/DependencyInjection/FullCalendarExtension.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#64#123#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sg-test/vendor/toiba/fullcalendar-bundle/Entity/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="472" column="22" lean-forward="true" selection-start-line="303" selection-start-column="4" selection-end-line="472" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sg-test/vendor/toiba/fullcalendar-bundle/doc/doctrine-crud.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1062">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding>
-              <marker date="1533837992000" expanded="true" signature="348:367" ph=" @ORM\Entity() ..." />
-              <marker date="1533837992000" expanded="true" signature="383:1301" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="393:480" ph=" @ORM\Id() ..." />
-              <marker date="1533837992000" expanded="true" signature="508:550" ph=" @ORM\Column(type=&quot;datetime&quot;) ..." />
-              <marker date="1533837992000" expanded="true" signature="583:625" ph=" @ORM\Column(type=&quot;datetime&quot;) ..." />
-              <marker date="1533837992000" expanded="true" signature="656:708" ph=" @ORM\Column(type=&quot;string&quot;, length=255) ..." />
-              <marker date="1533837992000" expanded="true" signature="760:798" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="832:875" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="927:974" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="1006:1047" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="1095:1138" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="1170:1211" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="1256:1299" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="1628:1652" ph=" @Route(&quot;/booking&quot;) ..." />
-              <marker date="1533837992000" expanded="true" signature="1697:1896" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="1719:1777" ph=" @Route(&quot;/calendar&quot;, name=&quot;booking_calendar&quot;) ..." />
-              <marker date="1533837992000" expanded="true" signature="1810:1882" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="2002:2159" ph="{% block body ...%}" />
-              <marker date="1533837992000" expanded="true" signature="2161:2329" ph="{% block stylesheets ...%}" />
-              <marker date="1533837992000" expanded="true" signature="2331:3709" ph="{% block javascripts ...%}" />
-              <marker date="1533837992000" expanded="true" signature="3996:4036" ph=" @var UrlGeneratorInterface ..." />
-              <marker date="1533837992000" expanded="true" signature="4151:4221" ph="{...}" />
-              <marker date="1533837992000" expanded="false" signature="4575:4797" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="4825:6981" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="4835:4876" ph=" @var EntityManagerInterface ..." />
-              <marker date="1533837992000" expanded="true" signature="4904:4944" ph=" @var UrlGeneratorInterface ..." />
-              <marker date="1533837992000" expanded="true" signature="5059:5129" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="5186:6979" ph="{...}" />
-              <marker date="1533837992000" expanded="true" signature="5545:5548" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="5573:5616" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="5645:5691" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="5720:5762" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="5844:6972" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="6202:6422" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="6678:6820" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="6719:6806" ph="..." />
-              <marker date="1533837992000" expanded="true" signature="6741:6805" ph="..." />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sg-test/vendor/toiba/fullcalendar-bundle/Resources/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sg-test/vendor/toiba/fullcalendar-bundle/Resources/public/js/fullcalendar/lib/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../sg-test/vendor/toiba/fullcalendar-bundle/Resources/public/js/fullcalendar/lib/jquery-ui.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1791,32 +1711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/contact/detail.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="70" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/sidebar.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="80" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/contact/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1901,14 +1795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/ContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="45" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/MAMPHTDOCS/coleres_justes/src/AppBundle/Controller/Admin/MailController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1925,14 +1811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/MAMPHTDOCS/coleres_justes/src/AppBundle/Controller/ContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/front/emails/contact.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1941,13 +1819,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Documents/MAMPHTDOCS/coleres_justes/src/AppBundle/Controller/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/user/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/contact/detail.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/contact/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/sidebar.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="44" column="73" lean-forward="false" selection-start-line="44" selection-start-column="73" selection-end-line="44" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Inspinia/sources/mail_compose.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="67" column="23" lean-forward="false" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Front/ContactController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="e#40#63#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="44">
+          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/contact/compose.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

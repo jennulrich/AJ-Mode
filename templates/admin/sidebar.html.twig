@@ -41,7 +41,8 @@
                 <a href=""><i class="fa fa-bicycle"></i> <span class="nav-label">Coursier - Inscription</span></a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'admin_mails'
-                or app.request.attributes.get('_route') == 'admin_view_mail' %}active{% endif %}">
+                or app.request.attributes.get('_route') == 'admin_view_mail'
+                or app.request.attributes.get('_route') == 'admin_compose_mail' %}active{% endif %}">
                 <a href="{{ path('admin_mails') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Messagerie</span></a>
             </li>
         </ul>
