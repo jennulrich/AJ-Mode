@@ -25,7 +25,7 @@ class ContactController extends Controller
         $this->contactManager = $contactManager;
     }
 
-    public function indexAction($name, \Swift_Mailer $mailer, Request $request)
+    public function indexAction(\Swift_Mailer $mailer, Request $request)
     {
         $form = $this->createForm(ContactType::class);
 
