@@ -25,34 +25,6 @@ class ContactController extends Controller
         $this->contactManager = $contactManager;
     }
 
-    public function indexAction(\Swift_Mailer $mailer, Request $request)
-    {
-        $form = $this->createForm(ContactType::class);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $contactFormData = $form->getData();
-
-            $message = (new \Swift_Message("Demande d'informations"))
-                ->setFrom($contactFormData['from'])
-                ->setTo('lc.modeparis@gmail.com')
-                ->setBody(
-                    $this->renderView(
-                        $contactFormData['message']
-                    ),
-                    'text/html'
-                );
-
-            $mailer->send($message);
-
-            return $this->redirectToRoute('home');
-        }
-
-        return $this->render('front/contact/contact.html.twig');
-    }
-
     /**
      * @Route("/{id}", name="admin_view_mail", requirements={"id"="\d+"})
      * @param $id int
