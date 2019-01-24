@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="User2Repository")
+ * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
  */
-class User2
+class Contact
 {
     /**
      * @ORM\Id()
@@ -32,14 +32,14 @@ class User2
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=60)
+     * @ORM\Column(type="string", length=255)
      */
-    private $password;
+    private $subject;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="text")
      */
-    private $is_admin;
+    private $message;
 
     public function getId(): ?int
     {
@@ -82,26 +82,26 @@ class User2
         return $this;
     }
 
-    public function getPassword(): ?string
+    public function getSubject(): ?string
     {
-        return $this->password;
+        return $this->subject;
     }
 
-    public function setPassword(string $password): self
+    public function setSubject(string $subject): self
     {
-        $this->password = $password;
+        $this->subject = $subject;
 
         return $this;
     }
 
-    public function getIsAdmin(): ?bool
+    public function getMessage(): ?string
     {
-        return $this->is_admin;
+        return $this->message;
     }
 
-    public function setIsAdmin(bool $is_admin): self
+    public function setMessage(string $message): self
     {
-        $this->is_admin = $is_admin;
+        $this->message = $message;
 
         return $this;
     }
