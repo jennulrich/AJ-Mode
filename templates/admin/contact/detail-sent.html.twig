@@ -25,24 +25,24 @@
                     <div class="pull-right tooltip-demo">
                         <a href="" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Répondre"><i class="fa fa-reply"></i> Répondre</a>
                         <a href="#" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Imprimer l'email"><i class="fa fa-print"></i> </a>
-                        <a href="{{ path('admin_delete_mail', { 'id': contact.id }) }}" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Placer dans la corbeille"><i class="fa fa-trash-o"></i> </a>
+                        <a href="" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Placer dans la corbeille"><i class="fa fa-trash-o"></i> </a>
                     </div>
                     <h2>
                         Détail du message
                     </h2>
                     <div class="mail-tools tooltip-demo m-t-md">
                         <h3>
-                            <span class="font-normal">Sujet : </span>{{ contact.subject }}
+                            <span class="font-normal">Sujet : </span>{{ sentEmail.subject }}
                         </h3>
                         <h5>
                             <span class="pull-right font-normal">10:15AM 02 FEB 2014</span>
-                            <span class="font-normal">De : </span>{{ contact.email }}
+                            <span class="font-normal text-uppercase">à : </span>{{ sentEmail.destinataire }}
                         </h5>
                     </div>
                 </div>
                 <div class="mail-box">
                     <div class="mail-body">
-                        <p>{{ contact.message }}</p>
+                        <p>{{ sentEmail.message }}</p>
                     </div>
                     <div class="mail-attachment">
                         <p>

@@ -42,8 +42,14 @@
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'admin_mails'
                 or app.request.attributes.get('_route') == 'admin_view_mail'
-                or app.request.attributes.get('_route') == 'admin_compose_mail' %}active{% endif %}">
-                <a href="{{ path('admin_mails') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Messagerie</span></a>
+                or app.request.attributes.get('_route') == 'admin_compose_mail'
+                or app.request.attributes.get('_route') == 'admin_sent_mails'
+                or app.request.attributes.get('_route') == 'admin_view_sent_mail' %}active{% endif %}">
+                <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">Messagerie</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="{{ path('admin_mails') }}">Boîte de réception</a></li>
+                    <li><a href="{{ path('admin_compose_mail') }}">Nouveau message</a></li>
+                </ul>
             </li>
         </ul>
     </div>
