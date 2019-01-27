@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="mail-text h-300">
-                            {{ form_widget(form.message|raw) }}
+                            {{ form_widget(form.message, {'attr': {'class': 'summernote'}}) }}
                         <div class="clearfix"></div>
                     </div>
                     <div class="mail-body text-right tooltip-demo">
