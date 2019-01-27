@@ -26,6 +26,8 @@
                 {% include 'admin/header.html.twig' %}
                 <div class="wrapper wrapper-content">
                     {% block content %}
+                        {% include 'flashMessages/flash-messages.html.twig' %}
+
                     {% endblock %}
                 </div>
                 {% include 'admin/footer.html.twig' %}
