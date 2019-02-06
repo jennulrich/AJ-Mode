@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Contact;
 use App\Entity\SendEmail;
+use App\Form\ContactType;
 use App\Form\SendEmailType;
 use App\Manager\ContactManager;
 use App\Manager\SendEmailManager;
@@ -41,9 +42,11 @@ class ContactController extends Controller
     public function viewAction(int $id): Response
     {
         $contact = $this->contactManager->get($id);
+        //$mail = $this->sendEmailManager->get($id);
 
         return $this->render('admin/contact/detail.html.twig', [
-            "contact" => $contact
+            "contact" => $contact,
+            //"mail" => $mail
         ]);
     }
 
@@ -118,6 +121,48 @@ class ContactController extends Controller
             'form' => $form->createView()
         ]);
     }
+
+
+    /*public function answerMailAction(int $id, Request $request, \Swift_Mailer $mailer)
+    {
+        $oldMail = $this->contactManager->get($id);
+
+        $answerMail = $this->sendEmailManager->get($id);
+
+        $form = $this->createForm(ContactType::class, $oldMail);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $this->sendEmailManager->save($answerMail);
+
+            $message = (new \Swift_Message($answerMail->getSubject()))
+                ->setFrom('lc.modeparis@gmail.com')
+                ->setTo($answerMail->getDestinataire())
+                ->setBody(
+
+                    $this->renderView(
+                        'admin/emails/contact.html.twig',
+                        [
+                            'sendEmail' => $answerMail,
+                            'oldMail' => $oldMail
+                        ]),
+                    'text/html'
+                );
+
+            $mailer->send($message);
+
+            return $this->redirectToRoute('admin_sent_mails', [
+                "id"=>$answerMail->getId(),
+                "idOld"=>$oldMail->getId(),
+            ]);
+        }
+
+        return $this->render('admin/contact/answer.html.twig', [
+            'form' => $form->createView(),
+            'mail' => $answerMail,
+            'oldMail' => $oldMail,
+        ]);
+    }*/
 
     /**
      * @Route("/sent", name="admin_sent_mails")
