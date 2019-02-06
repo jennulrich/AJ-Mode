@@ -38,12 +38,15 @@ class ContactController extends Controller
      * @param $id int
      * @return Response
      */
+    // Affiche le détail d'un email reçu depuis le formulaire de contact coté client
     public function viewAction(int $id): Response
     {
         $contact = $this->contactManager->get($id);
+        //$mail = $this->sendEmailManager->get($id);
 
         return $this->render('admin/contact/detail.html.twig', [
-            "contact" => $contact
+            "contact" => $contact,
+            //"mail" => $mail
         ]);
     }
 
@@ -52,6 +55,7 @@ class ContactController extends Controller
      * @param Request $request
      * @return Response
      */
+    // Affiche la liste des emails reçus depuis le formulaire de contact coté client
     public function listAction(Request $request): Response
     {
         $contacts = $this->contactManager->getList();
@@ -65,6 +69,7 @@ class ContactController extends Controller
      * @Route("/{id}/delete", name="admin_delete_mail", requirements={"id"="\d+"})
      * @return Response
      */
+    // Supprime un email
     public function DeleteAction(Contact $contact): Response
     {
         $this->contactManager->save($contact);
@@ -78,6 +83,7 @@ class ContactController extends Controller
      * @return Response
      * @Method({"GET","POST"})
      */
+    // Permet d'envoyer un email depuis le back office
     public function composeMailAction(\Swift_Mailer $mailer, Request $request)
     {
         $sendEmail = new SendEmail();
@@ -91,7 +97,6 @@ class ContactController extends Controller
             $em->persist($sendEmail);
             $em->flush();
 
-
             $message = (new \Swift_Message($sendEmail->getSubject()))
                 ->setFrom('lc.modeparis@gmail.com')
                 ->setTo($sendEmail->getDestinataire())
@@ -100,17 +105,16 @@ class ContactController extends Controller
                     $this->renderView(
                         'admin/emails/contact.html.twig',
                         [
-                            'sendEmail' => $sendEmail,
+                            'sendEmail' => $sendEmail
                         ]),
                     'text/html'
-
                 );
-
 
             $mailer->send($message);
 
-            return $this->redirectToRoute('admin_compose_mail');
+            $this->addFlash('success', 'It sent !');
 
+            return $this->redirectToRoute('admin_compose_mail');
         }
 
         return $this->render('admin/contact/compose.html.twig', [
@@ -118,11 +122,54 @@ class ContactController extends Controller
         ]);
     }
 
+
+    /*public function answerMailAction(int $id, Request $request, \Swift_Mailer $mailer)
+    {
+        $oldMail = $this->contactManager->get($id);
+
+        $answerMail = $this->sendEmailManager->get($id);
+
+        $form = $this->createForm(ContactType::class, $oldMail);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $this->sendEmailManager->save($answerMail);
+
+            $message = (new \Swift_Message($answerMail->getSubject()))
+                ->setFrom('lc.modeparis@gmail.com')
+                ->setTo($answerMail->getDestinataire())
+                ->setBody(
+
+                    $this->renderView(
+                        'admin/emails/contact.html.twig',
+                        [
+                            'sendEmail' => $answerMail,
+                            'oldMail' => $oldMail
+                        ]),
+                    'text/html'
+                );
+
+            $mailer->send($message);
+
+            return $this->redirectToRoute('admin_sent_mails', [
+                "id"=>$answerMail->getId(),
+                "idOld"=>$oldMail->getId(),
+            ]);
+        }
+
+        return $this->render('admin/contact/answer.html.twig', [
+            'form' => $form->createView(),
+            'mail' => $answerMail,
+            'oldMail' => $oldMail,
+        ]);
+    }*/
+
     /**
      * @Route("/sent", name="admin_sent_mails")
      * @param Request $request
      * @return Response
      */
+    // Affiche la liste des emails envoyés depuis le back office
     public function sentEmailAction(Request $request): Response
     {
         $sentEmails = $this->sendEmailManager->getList();
@@ -137,6 +184,7 @@ class ContactController extends Controller
      * @param $id int
      * @return Response
      */
+    // Affiche le detail d'un email envoyé depuis le back office
     public function viewSentEmailAction(int $id): Response
     {
         $sentEmail = $this->sendEmailManager->get($id);

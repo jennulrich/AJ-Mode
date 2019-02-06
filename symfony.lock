@@ -95,6 +95,15 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "friendsofsymfony/ckeditor-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "8eb1cd0962ded6a6d6e1e5a9b6d3e888f9f94ff6"
+        }
+    },
     "fzaninotto/faker": {
         "version": "v1.8.0"
     },
@@ -142,6 +151,9 @@
             "version": "5.2",
             "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
         }
+    },
+    "stfalcon/tinymce-bundle": {
+        "version": "v2.3.0"
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.1.3"

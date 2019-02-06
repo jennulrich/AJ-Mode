@@ -41,6 +41,7 @@ class Contact
      */
     private $message;
 
+
     public function getId(): ?int
     {
         return $this->id;

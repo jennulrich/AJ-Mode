@@ -9,7 +9,7 @@
                         <div class="file-manager">
                             <h5>Dossiers</h5>
                             <ul class="folder-list m-b-md" style="padding: 0">
-                                <li {% if app.request.attributes.get('_route') == 'admin_mails' %} style="font-weight: bold" {% endif %}><a href="{{ path('admin_mails') }}"> <i class="fa fa-inbox "></i> Boîte de réception <span class="label label-warning pull-right">16</span> </a></li>
+                                <li {% if app.request.attributes.get('_route') == 'admin_mails' %} style="font-weight: bold" {% endif %}><a href="{{ path('admin_mails') }}"> <i class="fa fa-inbox "></i> Boîte de réception <span class="label label-warning pull-right">{{ contacts|length }}</span> </a></li>
                                 <li><a href="{{ path('admin_sent_mails') }}"> <i class="fa fa-envelope-o"></i> Emails envoyés</a></li>
                                 <li><a href=""> <i class="fa fa-certificate"></i> Important</a></li>
                                 <li><a href=""> <i class="fa fa-file-text-o"></i> Brouillons <span class="label label-danger pull-right">2</span></a></li>
@@ -34,7 +34,7 @@
                         </div>
                     </form>
                     <h2>
-                        Boîte de réception (16)
+                        Boîte de réception ({{ contacts|length }})
                     </h2>
                     <div class="mail-tools tooltip-demo m-t-md">
                         <div class="btn-group pull-right">
@@ -61,7 +61,7 @@
                             <td class="mail-ontact"><a href="{{ path('admin_view_mail', { 'id': contact.id }) }}">{{ contact.firstname }} {{ contact.lastname }}</a></td>
                             <td class="mail-subject"><a href="{{ path('admin_view_mail', { 'id': contact.id }) }}">{{ contact.subject }}</a></td>
                             <td class=""><i class="fa fa-paperclip"></i></td>
-                            <td class="text-right mail-date">6.10 AM</td>
+                            <td class="text-right mail-date">Date</td>
                         </tr>
                         {% endfor %}
                         </tbody>

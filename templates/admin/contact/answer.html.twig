@@ -1,7 +1,6 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block content %}
-
     <style>
         .note-editing-area {
             min-height: 300px;
@@ -32,7 +31,7 @@
             <div class="col-lg-9 animated fadeInRight">
                 <div class="mail-box-header">
                     <h2>
-                        Nouveau message
+                        Répondre
                     </h2>
                 </div>
 
@@ -41,13 +40,13 @@
                     <div class="mail-body">
                         <div class="form-group" style="display: none;">
                             <div class="col-sm-10">
-                                {{ form_widget(form.expediteur, {'attr': {'class': 'form-control'} }) }}
+                                {{ form_widget(form.firstname, {'attr': {'class': 'form-control'} }) }}
                             </div>
                         </div>
                         <div class="form-group">
-                            {{ form_label(form.destinataire, null, { 'label_attr': {'class': 'col-sm-2 control-label text-uppercase'} }) }}
+                            {{ form_label(form.email, null, { 'label_attr': {'class': 'col-sm-2 control-label text-uppercase'} }) }}
                             <div class="col-sm-10">
-                                {{ form_widget(form.destinataire, {'attr': {'class': 'form-control'} }) }}
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
                             </div>
                         </div>
                         <div class="form-group">
@@ -58,7 +57,7 @@
                         </div>
                     </div>
                     <div class="mail-text h-300">
-                            {{ form_widget(form.message, {'attr': {'class': 'summernote'}}) }}
+                        {{ form_widget(form.message, {'attr': {'class': 'summernote'}}) }}
                         <div class="clearfix"></div>
                     </div>
                     <div class="mail-body text-right tooltip-demo">
@@ -71,7 +70,6 @@
                     <div class="clearfix"></div>
                     {{ form_end(form) }}
                 </div>
-
             </div>
         </div>
     </div>
