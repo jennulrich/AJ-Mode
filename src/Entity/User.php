@@ -48,6 +48,11 @@ class User implements UserInterface
      */
     private $is_admin;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_shop;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -83,6 +88,14 @@ class User implements UserInterface
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
+
+        if($this->isAdmin()) {
+            $roles = ['ROLE_ADMIN'];
+        }
+
+        if($this->isShop()) {
+            $roles = ['ROLE_BOUTIQUE'];
+        }
 
         return array_unique($roles);
     }
@@ -150,8 +163,22 @@ class User implements UserInterface
         return $this;
     }
 
+    /*
+     * Get isAdmin
+     *
+     * @return boolean
+     */
     public function getIsAdmin(): ?bool
     {
+        return $this->is_admin;
+    }
+
+    /*
+     * Get isAdmin
+     *
+     * @return bool
+     */
+    public function isAdmin() {
         return $this->is_admin;
     }
 
@@ -160,5 +187,31 @@ class User implements UserInterface
         $this->is_admin = $is_admin;
 
         return $this;
+    }
+
+    /*
+     * Get isShop
+     *
+     * @return boolean
+     */
+    public function getIsShop(): ?bool
+    {
+        return $this->is_shop;
+    }
+
+    public function setIsShop(bool $is_shop): self
+    {
+        $this->is_shop = $is_shop;
+
+        return $this;
+    }
+
+    /*
+     * Get isShop
+     *
+     * @return bool
+     */
+    public function isShop() {
+        return $this->is_shop;
     }
 }

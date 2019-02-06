@@ -1,3 +1,4 @@
+{% if is_granted('ROLE_ADMIN') %}
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
@@ -54,3 +55,42 @@
         </ul>
     </div>
 </nav>
+{% endif %}
+
+{% if is_granted('ROLE_BOUTIQUE') %}
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element text-center"> <span>
+                                <a target="_blanck" href="{{ path('home') }}"><img alt="image" class="img-profile" width="50%" src="{{ asset('img/logo_lc_mode.png') }}" /></a>
+                                 </span>
+                        <a href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">Las Connasses</strong>
+                                        <span class="text-muted text-xs block">Zara</span>
+                                    </span>
+                                </span>
+                        </a>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == 'shop_dashboard' %}active{% endif %}">
+                    <a href="{{ path('shop_dashboard') }}"><i class="fa fa-tachometer"></i> <span class="nav-label">Dashboard</span></a>
+                </li>
+                <li class="">
+                    <a href=""><i class="fa fa-image"></i> <span class="nav-label">Catalogue</span>  </a>
+                </li>
+                <li class="">
+                    <a href=""><i class="fa fa-users"></i> <span class="nav-label">Clients</span></a>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-shopping-bag"></i> <span class="nav-label">Commandes</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endif %}
