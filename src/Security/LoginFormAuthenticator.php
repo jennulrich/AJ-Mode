@@ -85,10 +85,22 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
+        $roles = $token->getRoles();
+
+        $rolesTab = array_map(function ($role) {
+            return $role->getRole();
+        }, $roles);
+
         // For example : return new RedirectResponse($this->router->generate('some_route'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
 
-        return new RedirectResponse($this->router->generate('dashboard'));
+        if(in_array('ROLE_ADMIN', $rolesTab, true)) {
+            $redirection = new RedirectResponse($this->router->generate('dashboard'));
+        } elseif (in_array('ROLE_BOUTIQUE', $rolesTab, true)) {
+            $redirection = new RedirectResponse($this->router->generate('shop_dashboard'));
+        }
+
+        return $redirection;
     }
 
     protected function getLoginUrl()
