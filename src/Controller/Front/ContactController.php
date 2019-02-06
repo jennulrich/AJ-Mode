@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Contact controller.
  *
- * @Route("front/mail")
+ * @Route("contact")
  */
 class ContactController extends Controller
 {
