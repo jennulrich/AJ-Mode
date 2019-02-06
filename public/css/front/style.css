@@ -86,3 +86,8 @@ div.counter span.current, div.counter span.total{
 	background: #4e194b none repeat scroll 0 0;
 }
 /**Fin page HOME**/
+
+/** Page CONTACT **/
+input.submit-contact:hover{
+	background-color: #4e194b !important;
+}

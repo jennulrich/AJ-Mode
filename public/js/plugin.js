@@ -190,7 +190,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
             meanMenuTarget: jQuery(this), // Target the current HTML markup you wish to replace
             meanMenuContainer: 'body', // Choose where meanmenu will be placed within the HTML
             meanMenuClose: "X", // single character you want to represent the close menu button
-            meanMenuCloseSize: "18px", // set font size of close button
+            meanMenuCloseSize: "18px", // set fonts size of close button
             meanMenuOpen: "<span /><span /><span />", // text/markup you want when menu is closed
             meanRevealPosition: "", // left right or center positions
             meanRevealPositionDistance: "0", // Tweak the position of the menu
@@ -343,7 +343,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
                         if(meanExpandableChildren){
                             jQuery('.mean-nav ul ul').each(function() {
                                 if(jQuery(this).children().length){
-                                    jQuery(this,'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: '+ meanMenuCloseSize +'">'+ meanExpand +'</a>');
+                                    jQuery(this,'li:first').parent().append('<a class="mean-expand" href="#" style="fonts-size: '+ meanMenuCloseSize +'">'+ meanExpand +'</a>');
                                 }
                             });
                             jQuery('.mean-expand').on("click",function(e){
