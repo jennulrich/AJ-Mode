@@ -31,6 +31,7 @@ class UserFixtures extends Fixture
             $user->setPassword($this->passwordEncoder->encodePassword($user,
                     'test'));
             $user->setIsAdmin($faker->boolean);
+            $user->setIsShop($faker->boolean);
             $manager->persist($user);
         }
         $manager->flush();

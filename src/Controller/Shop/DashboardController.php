@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Shop;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,14 +9,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractController
 {
     /**
-     * @Route("/admin/dashboard", name="dashboard")
+     * @Route("/shop/dashboard", name="shop_dashboard")
      *
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_BOUTIQUE")
      */
     public function index()
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        return $this->render('admin/dashboard/index.html.twig', [
+        $this->denyAccessUnlessGranted('ROLE_BOUTIQUE');
+        return $this->render('shop/dashboard/index.html.twig', [
             'controller_name' => 'DashboardController',
         ]);
     }
