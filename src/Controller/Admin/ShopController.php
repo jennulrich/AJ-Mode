@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Shop;
 use App\Form\ShopType;
 use App\Manager\ShopManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

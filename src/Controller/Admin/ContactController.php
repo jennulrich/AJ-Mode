@@ -8,8 +8,7 @@ use App\Form\ContactType;
 use App\Form\SendEmailType;
 use App\Manager\ContactManager;
 use App\Manager\SendEmailManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -78,10 +77,9 @@ class ContactController extends Controller
     }
 
     /**
-     * @Route("/compose", name="admin_compose_mail")
+     * @Route("/compose", name="admin_compose_mail", methods={"GET", "POST"})
      * @param Request $request
      * @return Response
-     * @Method({"GET","POST"})
      */
     // Permet d'envoyer un email depuis le back office
     public function composeMailAction(\Swift_Mailer $mailer, Request $request)
@@ -100,6 +98,7 @@ class ContactController extends Controller
             $message = (new \Swift_Message($sendEmail->getSubject()))
                 ->setFrom('lc.modeparis@gmail.com')
                 ->setTo($sendEmail->getDestinataire())
+                ->setContentType('text/html')
                 ->setBody(
 
                     $this->renderView(

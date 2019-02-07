@@ -81,8 +81,10 @@
                 <li class="{% if app.request.attributes.get('_route') == 'shop_dashboard' %}active{% endif %}">
                     <a href="{{ path('shop_dashboard') }}"><i class="fa fa-tachometer"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
-                <li class="">
-                    <a href=""><i class="fa fa-image"></i> <span class="nav-label">Catalogue</span>  </a>
+                <li class="{% if app.request.attributes.get('_route') == 'shop_catalogs'
+                                or app.request.attributes.get('_route') == 'shop_view_catalog'
+                                or app.request.attributes.get('_route') == 'shop_add_catalog' %}active{% endif %}">
+                    <a href="{{ path('shop_catalogs') }}"><i class="fa fa-image"></i> <span class="nav-label">Catalogue</span>  </a>
                 </li>
                 <li class="">
                     <a href=""><i class="fa fa-users"></i> <span class="nav-label">Clients</span></a>
