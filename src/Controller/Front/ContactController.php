@@ -5,8 +5,7 @@ namespace App\Controller\Front;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Manager\ContactManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,10 +26,9 @@ class ContactController extends Controller
     }
 
     /**
-     * @Route("/", name="contact")
+     * @Route("/", name="contact", methods={"GET"})
      * @param Request $request
      * @return Response
-     * @Method({"GET","POST"})
      */
     public function indexAction(\Swift_Mailer $mailer, Request $request)
     {

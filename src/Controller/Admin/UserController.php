@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Manager\UserManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -108,7 +108,7 @@ class UserController extends Controller
      */
     public function DeleteAction(User $user): Response
     {
-        $this->userManager->save($user);
+        $this->userManager->remove($user);
 
         return $this->redirectToRoute('admin_users');
     }

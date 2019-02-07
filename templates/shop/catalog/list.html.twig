@@ -1,0 +1,58 @@
+{% extends 'shop/layout.html.twig' %}
+
+{% block content %}
+    <div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Référence</th>
+                <th>Image</th>
+                <th>Nom du produit</th>
+                <th>Descriptif</th>
+                <th>Composition</th>
+                <th>Prix</th>
+                <th>Stock</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for catalog in catalogs %}
+                <tr>
+                    <td>{{ catalog.ref }}</td>
+                    <td style="vertical-align: middle;">
+                        <img src="{{ catalog.image }}" alt="" width="60px" height="60px">
+                    </td>
+                    <td>
+                        {{ catalog.title }}
+                    </td>
+                    <td>
+                        {{ catalog.description }}
+                    </td>
+                    <td>
+                        {{ catalog.composition }}
+                    </td>
+                    <td width="100px">
+                        {{ catalog.price }} €
+                    </td>
+                    <td>
+                        {{ catalog.stock }}
+                    </td>
+                    <td width="100px">
+                        <ul class="" style="list-style-type: none; padding: 0; margin: 0;">
+                            <li style="display: inline-block; padding: 0 5px;">
+                                <a href="{{ path('shop_view_catalog', { 'id': catalog.id }) }}" class="action" title="Détail"> <i class="fa fa-eye"></i></a>
+                            </li>
+                            <li style="display: inline-block; padding: 0 5px;">
+                                <a href="{{ path('shop_edit_catalog', { 'id': catalog.id }) }}" class="action" title="Editer"><i class="fa fa-edit"></i></a>
+                            </li>
+                            <li style="display: inline-block; padding: 0 5px;">
+                                <a href="{{ path('shop_delete_catalog', { 'id': catalog.id}) }}" class="action"><i class="fa fa-trash"></i></a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
