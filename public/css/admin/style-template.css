@@ -169,7 +169,7 @@ h5 {
   font-size: 12px;
 }
 .nav-header {
-  padding: 33px 25px;
+  padding: 20px;
   /*background-color: #2f4050;*/
   background-color: #1d1d1d;
   /*background-image: url("patterns/header-profile.png");*/
@@ -1768,7 +1768,7 @@ div.dt-button-info {
   display: none;
 }
 .pace .pace-progress {
-  background: #1ab394;
+  background: #752670;
   position: fixed;
   z-index: 2040;
   top: 0;
@@ -1902,11 +1902,13 @@ div.dt-button-info {
 }
 .form-control:focus,
 .single-line:focus {
-  border-color: #1ab394;
+  /*border-color: #1ab394;*/
+  border-color: #4e194b;
 }
 .has-success .form-control,
 .has-success .form-control:focus {
-  border-color: #1ab394;
+  /*border-color: #1ab394;*/
+  border-color: #4e194b;
 }
 .has-warning .form-control,
 .has-warning .form-control:focus {
@@ -4105,6 +4107,7 @@ table.table-mail tr td {
 }
 .progress-bar {
   background-color: #1ab394;
+  /*background-color: #4e194b;*/
 }
 .progress-small,
 .progress-small .progress-bar {

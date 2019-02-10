@@ -5,7 +5,7 @@ namespace App\Controller\Shop;
 use App\Entity\Catalog;
 use App\Form\CatalogType;
 use App\Manager\CatalogManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
