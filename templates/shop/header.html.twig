@@ -25,6 +25,8 @@
             or app.request.attributes.get('_route') == 'shop_view_catalog'
             or app.request.attributes.get('_route') == 'shop_edit_catalog'
             or app.request.attributes.get('_route') == 'shop_add_catalog' %}Catalogue{% endif %}
+            {% if app.request.attributes.get('_route') == 'shop_customers'
+                or app.request.attributes.get('_route') == 'shop_edit_customer' %}Clients{% endif %}
         </h2>
         <ol class="breadcrumb">
             <li>
@@ -38,6 +40,8 @@
                     {% if app.request.attributes.get('_route') == 'shop_view_catalog' %}Détail d'un produit{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_edit_catalog' %}Modification d'un produit{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_add_catalog' %}Ajout d'un produit{% endif %}
+                    {% if app.request.attributes.get('_route') == 'shop_customers' %}Liste des clients{% endif %}
+                    {% if app.request.attributes.get('_route') == 'shop_edit_customer' %}Modification d'un client{% endif %}
                 </strong>
             </li>
         </ol>
@@ -46,10 +50,12 @@
         <div class="title-action">
             <a href="{% if app.request.attributes.get('_route') == 'shop_catalogs' %}{{ path('shop_add_catalog') }}{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_view_catalog' %}{{ path('shop_catalogs') }}{% endif %}
-                    {% if app.request.attributes.get('_route') == 'shop_add_catalog' %}{{ path('shop_catalogs') }}{% endif %}" class="btn btn-primary">
+                    {% if app.request.attributes.get('_route') == 'shop_edit_customer' %}{{ path('shop_customers') }}{% endif %}" class="btn btn-primary"
+                    style="{% if app.request.attributes.get('_route') == 'shop_customers' %}display: none;{% endif %}">
                 {% if app.request.attributes.get('_route') == 'shop_catalogs' %}Ajouter un produit{% endif %}
                 {% if app.request.attributes.get('_route') == 'shop_view_catalog' %}Retour à la liste{% endif %}
                 {% if app.request.attributes.get('_route') == 'shop_add_catalog' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'shop_edit_customer' %}Retour à la liste{% endif %}
             </a>
         </div>
     </div>

@@ -86,8 +86,11 @@
                                 or app.request.attributes.get('_route') == 'shop_add_catalog' %}active{% endif %}">
                     <a href="{{ path('shop_catalogs') }}"><i class="fa fa-image"></i> <span class="nav-label">Catalogue</span>  </a>
                 </li>
-                <li class="">
-                    <a href=""><i class="fa fa-users"></i> <span class="nav-label">Clients</span></a>
+                <li class="{% if app.request.attributes.get('_route') == 'shop_customers'
+                                or app.request.attributes.get('_route') == 'shop_view_customer'
+                                or app.request.attributes.get('_route') == 'shop_add_customer'
+                                or app.request.attributes.get('_route') == 'shop_edit_customer' %}active{% endif %}">
+                    <a href="{{ path('shop_customers') }}"><i class="fa fa-users"></i> <span class="nav-label">Clients</span></a>
                 </li>
                 <li>
                     <a href=""><i class="fa fa-shopping-bag"></i> <span class="nav-label">Commandes</span></a>

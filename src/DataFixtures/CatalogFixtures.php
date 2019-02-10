@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Catalog;
-use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -16,7 +15,7 @@ class CatalogFixtures extends Fixture
         // On configure dans quelles langues nous voulons nos données
         $faker = Faker\Factory::create('fr_FR');
 
-        // on créé 10 personnes
+        // on créé 10 produits
         for ($i = 0; $i < 10; $i++) {
             $catalog = new Catalog();
             $catalog->setRef('REF'.$faker->randomNumber(5));
