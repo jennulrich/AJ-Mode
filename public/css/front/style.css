@@ -91,3 +91,18 @@ div.counter span.current, div.counter span.total{
 input.submit-contact:hover{
 	background-color: #4e194b !important;
 }
+/**Fin page CONTACT**/
+
+/** Page HOME-USER **/
+div.portfolio-like span:hover, div.portfolio-title h4 a:hover{
+	color: #882C83 !important;
+}
+div.portfolio-menu-active button.active, div.portfolio-menu-active button:hover{
+	color: #882C83 !important;
+}
+div.portfolio-menu-active button.active::before, .portfolio-menu-1.pro-menu-btn button::before {
+	background-color: #882C83;
+}
+.btn-hover::before{
+	background-color: #4e194b !important;
+}
