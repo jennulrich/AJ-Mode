@@ -197,3 +197,26 @@ a:hover{
 	background-color: #38AF3F;
 }
 /**Fin page DETAIL PRODUCT**/
+
+/**Page CART**/
+.cart-clear > button:hover, .cart-shiping-update a:hover{
+	border: 1px solid #4e194b;
+}
+.proceed-btn > a{
+	background-color: #4e194b;
+	color: white;
+}
+.cart-table table td.cart-remove a:hover{
+	color: #38AF3F;
+}
+/**Fin page CART **/
+
+/**Page CHECKOUT**/
+.checkout-account-toggle button.checkout-btn{
+	background-color: #4e194b;
+}
+.Place-order > a, .Place-order > a:hover{
+	background-color: #4e194b;
+	color: white;
+}
+/**Fin page CHECKOUT**/
