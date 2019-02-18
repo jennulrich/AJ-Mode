@@ -1,0 +1,116 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block content %}
+<!-- breadcrumb area -->
+<div class="breadcrumb-area bg-img pt-230 pb-152" style="background-image: url('../img/breadcrumb-4.jpg');">
+    <div class="container">
+        <div class="breadcrumb-content breadcrumb-black2 text-center">
+            <h2>Mon panier</h2>
+            <ul>
+                <li>
+                    <a href="{{ path('home-user') }}">Boutiques</a>
+                </li>
+                <li class="active">Panier</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- main-search start -->
+<div class="main-search-active">
+    <div class="sidebar-search-icon">
+        <button class="search-close"><span class="ti-close"></span></button>
+    </div>
+    <div class="sidebar-search-input">
+        <form>
+            <div class="form-search">
+                <input id="search" class="input-text" value="" placeholder="Search Entire Store" type="search">
+                <button>
+                    <i class="ti-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="cart-area pt-95 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <form action="#">
+                    <div class="table-content table-responsive cart-table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="cart-product">Produits</th>
+                                <th class="cart-price"> Prix  </th>
+                                <th  class="cart-qty"> Quantité </th>
+                                <th class="cart-total">Total</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="cart-img-name">
+                                    <a class="cart-img" href="{{ path('detail-product') }}"><img src="../img/product/product.jpg" alt=""></a>
+                                    <a class="cart-name" href="{{ path('detail-product') }}">Product Name</a>
+                                </td>
+                                <td class="cart-price"><span class="amount">$329</span></td>
+                                <td class="cart-quantity">
+                                    <div class="pro-dec-cart">
+                                        <input class="cart-plus-minus-box" type="text" value="01" name="qtybutton">
+                                    </div>
+                                </td>
+                                <td class="cart-subtotal"><span>$329</span></td>
+                                <td class="cart-remove">
+                                    <a href="#"><i class="ti-close"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cart-img-name">
+                                    <a class="cart-img" href="{{ path('detail-product') }}"><img src="../img/product/product.jpg" alt=""></a>
+                                    <a class="cart-name" href="{{ path('detail-product') }}">Product Name</a>
+                                </td>
+                                <td class="cart-price"><span class="amount">$329</span></td>
+                                <td class="cart-quantity">
+                                    <div class="pro-dec-cart">
+                                        <input class="cart-plus-minus-box" type="text" value="01" name="qtybutton">
+                                    </div>
+                                </td>
+                                <td class="cart-subtotal"><span>$329</span></td>
+                                <td class="cart-remove">
+                                    <a href="#"><i class="ti-close"></i></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="cart-shiping-update-wrapper mt-25">
+                                <div class="cart-clear">
+                                    <button class="btn-hover">mettre à jour son panier</button>
+                                </div>
+                                <div class="cart-shiping-update">
+                                    <a class="btn-hover" href="cart-page.html#">Continuer son shopping</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <div class="proceed-area gray-bg-4">
+                    <ul>
+                        <li><span class="proceed-title">Sous-total</span> <span>$329</span></li>
+                        <li><span class="proceed-title">Livraison</span> <span>Livraison gratuite</span></li>
+                        <li><span class="proceed-title proceed-bold">Total</span> <span>$329</span></li>
+                    </ul>
+                    <div class="proceed-btn">
+                        <a class="btn-hover" href="{{ path('checkout') }}">Passer la commande</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
