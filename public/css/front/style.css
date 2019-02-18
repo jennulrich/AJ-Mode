@@ -161,3 +161,39 @@ a:hover{
 	color: #882C83;
 }
 /**Fin page SHOP**/
+
+/**Page DETAIL PRODUCT**/
+.pro-details-rating i.theme-color{
+	color: #4e194b;
+}
+.product-details-content > h3{
+	color: #38AF3F;
+}
+.pro-details-color2-content ul li.active::before{
+	border-color: #4e194b;
+}
+.pro-details-size2-content ul li a:hover{
+	background-color: #4e194b;
+}
+.pro-details-cart > a{
+	background-color: #4e194b;
+}
+.pro-details-cart a:hover{
+	color: white;
+}
+.description-review-topbar > a.active{
+	border-bottom: 3px solid #4e194b;
+}
+.review-rating i.theme-color{
+	color: #4e194b;
+}
+.review-left > a{
+	color: #38AF3F;
+}
+.rating-form-style.form-submit input.soumettre-avis{
+	background-color: #4e194b;
+}
+.rating-form-style.form-submit input.soumettre-avis:hover{
+	background-color: #38AF3F;
+}
+/**Fin page DETAIL PRODUCT**/
