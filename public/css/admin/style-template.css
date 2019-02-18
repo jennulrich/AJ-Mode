@@ -781,9 +781,12 @@ fieldset[disabled] .btn-info.active {
   border-color: #26d7d9;
 }
 .btn-default {
-  color: inherit;
+  /*color: inherit;
   background: white;
-  border: 1px solid #e7eaec;
+  border: 1px solid #e7eaec;*/
+  background-color: #ffffff;
+  border: 1px solid #4e194b;
+  color: #4e194b;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -1095,7 +1098,8 @@ button.dim:active:before {
 }
 .label-primary,
 .badge-primary {
-  background-color: #1ab394;
+  /*background-color: #1ab394;*/
+  background-color: #4e194b;
   color: #FFFFFF;
 }
 .label-success,
@@ -3202,8 +3206,10 @@ a.forum-item-title:hover {
 /* Tour */
 .tour-tour .btn.btn-default {
   background-color: #ffffff;
-  border: 1px solid #d2d2d2;
-  color: inherit;
+  /*border: 1px solid #d2d2d2;*/
+  border: 1px solid #4e194b;
+  /*color: inherit;*/
+  color: #4e194b;
 }
 .tour-step-backdrop {
   z-index: 2101;
