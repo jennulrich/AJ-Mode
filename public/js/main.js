@@ -909,11 +909,10 @@
             max: 1200,
             values: [0, 800],
             slide: function(event, ui) {
-                amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
+                amountprice.val( ui.values[0] + "€ - " + ui.values[1] + "€" );
             }
         });
-        amountprice.val("$" + sliderrange.slider("values", 0) +
-            " - $" + sliderrange.slider("values", 1));
+        amountprice.val(sliderrange.slider("values", 0) + "€ - " + sliderrange.slider("values", 1) + "€");
     });
 
 
