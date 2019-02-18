@@ -106,3 +106,42 @@ div.portfolio-menu-active button.active::before, .portfolio-menu-1.pro-menu-btn 
 .btn-hover::before{
 	background-color: #4e194b !important;
 }
+
+/** Page SHOP **/
+.title-shop h2, .title-shop ul li{
+	color: #4e194b;
+}
+.shop-img span.sale{
+	background-color: #38AF3F;
+}
+.shop-img span.new{
+	background-color: #4e194b;
+}
+button.btn-filter{
+	background-color: #4e194b;
+}
+.sidebar-categori li a:hover, .sidebar-categori li a:hover span{
+	color: #882C83;
+}
+a:hover{
+	color: #882C83;
+}
+.pro-sidebar-search form button:hover{
+	color: #882C83;
+}
+.shop-wishlist{
+	background-color: #4e194b;
+}
+.shop-wishlist a:hover{
+	color: #fff;
+}
+.shop-card{
+	background-color: white;
+}
+.shop-card > a{
+	color: #4e194b;
+}
+.shop-card > a:hover{
+	color: #882C83;
+}
+/**Fin page SHOP**/
