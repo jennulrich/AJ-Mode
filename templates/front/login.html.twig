@@ -1,0 +1,58 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block content %}
+<div class="shortcode-login-regi-area pt-113 pb-120 black-bg-4 breadcrumb-area default-overlay-2" style="background-image: url('../img/banner-store.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-xl-6 col-md-12 col-12 ml-auto mr-auto">
+                <div class="pl-30 pr-30">
+                    <div class="login-regi-wrapper">
+                        <div class="login-register-tab-list nav">
+                            <a class="active" data-toggle="tab" href="#login" style="width: 49%;">
+                                <h4>S'identifier</h4>
+                            </a>
+                            <a data-toggle="tab" href="#register" style="width: 49%;">
+                                <h4>S'inscrire</h4>
+                            </a>
+                        </div>
+                        <div class="tab-content login-regi-content">
+                            <div id="login" class="tab-pane active">
+                                <div class="login-register-form">
+                                    <form action="#" method="post">
+                                        <input type="text" name="user-name" placeholder="Votre nom">
+                                        <input type="password" name="user-password" placeholder="Mot de passe">
+                                        <div class="submit-btn">
+                                            <button class="btn-hover" type="submit">S'identifier</button>
+                                        </div>
+                                    </form>
+                                    <div class="login-social-wrap">
+                                        <p>Ou connectez-vous avec</p>
+                                        <div class="login-social-btn">
+                                            <a class="facebook" href="#"><i class="ti-facebook"></i> Facebook</a>
+                                            <a class="twitter" href="#"><i class="ti-twitter-alt"></i> Twitter</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="register" class="tab-pane">
+                                <div class="login-register-form">
+                                    <form action="#" method="post">
+                                        <input type="text" name="user-name" placeholder="Prénom">
+                                        <input type="text" name="user-name" placeholder="Nom">
+                                        <input type="text" name="user-name" placeholder="Téléphone">
+                                        <input name="user-email" placeholder="Email" type="email">
+                                        <input type="password" name="user-password" placeholder="Mot de passe">
+                                        <div class="submit-btn">
+                                            <button class="btn-hover" type="submit">S'inscrire</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

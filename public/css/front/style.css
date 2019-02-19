@@ -8,10 +8,9 @@ li.list-shop a{
 ul li.detail-list-shop a:hover{
 	color: #38AF3F !important;
 }
-/** Fin page Navbar**/
-
-
-/** Page HOME**/
+header.stick div div div.logo-menu-wrap div.div-img-logo a img.img-logo{
+	padding: 10px 13px;
+}
 .btn-connexion{
 	transition: background-color 0.4s ease;
 	background-color: #4e194b;
@@ -27,19 +26,19 @@ ul li.detail-list-shop a:hover{
 }
 .navbar-home div.container{
 	display: flex;
-	align-items: center; 
+	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 7px;
 }
 .navbar-home{
 	box-shadow: 1px 1px 10px #e7eaec;
 }
-.btn-valid-green{
+.btn-deconnexion{
 	color: #38AF3F;
 	border: 1px solid #38AF3F;
 	border-radius: 3px;
 }
-.btn-valid-green:hover{
+.btn-deconnexion:hover{
 	color: white;
 	background-color: #38AF3F;
 	border: 1px solid #38AF3F;
@@ -55,6 +54,10 @@ ul li.detail-list-shop a:hover{
 img.img-logo-brand{
 	width: 100px !important;
 }
+/** Fin page Navbar**/
+
+
+/** Page HOME**/
 .default-overlay-2::before{
 	background-color: #1e2127;
 	opacity: 0.7;
@@ -219,4 +222,16 @@ a:hover{
 	background-color: #4e194b;
 	color: white;
 }
+.your-order-total ul li{
+	color: #38AF3F;
+}
 /**Fin page CHECKOUT**/
+
+/**Page LOGIN**/
+.login-register-tab-list a.active h4{
+	border-bottom: 3px solid #4e194b;
+}
+.submit-btn button{
+	background-color: #4e194b;
+}
+/**Fin page LOGIN**/
