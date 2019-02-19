@@ -13,8 +13,8 @@
             <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
             <link href="{{ asset('css/admin/summernote.css') }}" rel="stylesheet">
             <link href="{{ asset('css/admin/summernote-bs3.css') }}" rel="stylesheet">
-            <!-- Sweet Alert -->
-            <link href="{{ asset('css/admin/sweetalert.css') }}" rel="stylesheet">
+            <!-- Foo Table -->
+            <link href="{{ asset('css/admin/footable.core.css') }}" rel="stylesheet">
             <link href="{{ asset('css/admin/style.css') }}" rel="stylesheet">
             <link href="{{ asset('css/admin/style-template.css') }}" rel="stylesheet">
         {% endblock %}
@@ -50,12 +50,18 @@
                 <!-- Textarea plugin Summernote -->
                 <script src="{{ asset('js/summernote.min.js') }}"></script>
 
-                <!-- Sweet alert -->
-                <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+                <!-- Foo Table -->
+                <script src="{{ asset('js/footable.all.min.js') }}"></script>
 
             <script>
                 $(document).ready(function(){
                     $('.summernote').summernote();
+
+                    $('.footable').footable({
+                        "paging": {
+                            "enabled": true
+                        }
+                    });
                 });
             </script>
         </div>

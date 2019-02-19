@@ -19,7 +19,8 @@ class UserType extends AbstractType
             ->add('zip_code', TextType::class, array('label' => 'Code postal'))
             ->add('city', TextType::class, array('label' => 'Ville'))
             ->add('phone_number', TextType::class, array('label' => 'N° de téléphone'))
-            ->add('password', TextType::class, array('label' => 'Mot de passe'))
+            //->add('password', TextType::class, array('label' => 'Mot de passe'))
+            ->remove('password')
             ->add('email', TextType::class, array('label' => 'Email'));
     }
 }

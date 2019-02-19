@@ -29,7 +29,8 @@
                 <a href="{{ path('admin_users') }}"><i class="fa fa-users"></i> <span class="nav-label">Utilisateurs</span>  </a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'admin_shops'
-                        or app.request.attributes.get('_route') == 'admin_add_shop' %}active{% endif %}">
+                        or app.request.attributes.get('_route') == 'admin_add_shop'
+                        or app.request.attributes.get('_route') == 'admin_edit_shop' %}active{% endif %}">
                 <a href="{{ path('admin_shops') }}"><i class="fa fa-shopping-bag"></i> <span class="nav-label">Boutiques</span></a>
             </li>
             <li>

@@ -14,7 +14,7 @@ class ShopType extends AbstractType
         $builder
             ->add('shop_name',TextType::class, array('label' => 'Nom de la boutique'))
             ->add('address', TextType::class, array('label' => 'Adresse'))
-            ->add('owner', DateTimeType::class, array('label' => 'Propriétaire / Gérant'))
+            ->add('owner', TextType::class, array('label' => 'Propriétaire / Gérant'))
             ->add('email', TextType::class, array('label' => 'Email'))
             ->add('phone', TextType::class, array('label' => 'Téléphone'));
     }
