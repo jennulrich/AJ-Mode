@@ -3148,7 +3148,8 @@ a.forum-item-title:hover {
 /*Slick Carousel */
 .slick-prev:before,
 .slick-next:before {
-  color: #1ab394 !important;
+  /*color: #1ab394 !important;*/
+    color: #4e194b !important;
 }
 /* Payments */
 .payment-card {

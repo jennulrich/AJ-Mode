@@ -27,7 +27,14 @@
     {% include 'sidebar.html.twig' %}
 
     <div id="page-wrapper" class="gray-bg">
-        {% include 'shop/header.html.twig' %}
+        {% if app.request.attributes.get('_route') == 'shop_dashboard' %}
+            {% include 'shop/header-dashboard.html.twig' %}
+        {% endif %}
+
+        {% if app.request.attributes.get('_route') != 'shop_dashboard' %}
+            {% include 'shop/header.html.twig' %}
+        {% endif %}
+
         <div class="wrapper wrapper-content">
             {% block content %}
 
