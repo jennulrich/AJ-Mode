@@ -1,0 +1,84 @@
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="Rechercher..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <a href="#">
+                    <i class="fa fa-sign-out"></i> Déconnexion
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>
+            {% if app.request.attributes.get('_route') == 'home' %}Dashboard{% endif %}
+            {% if app.request.attributes.get('_route') == 'admin_users'
+                or app.request.attributes.get('_route') == 'admin_view_user'
+                or app.request.attributes.get('_route') == 'admin_edit_user'
+                or app.request.attributes.get('_route') == 'admin_add_user' %}Utilisateurs{% endif %}
+            {% if app.request.attributes.get('_route') == 'admin_shops'
+                or app.request.attributes.get('_route') == 'admin_add_shop' %}Boutiques{% endif %}
+            {% if app.request.attributes.get('_route') == 'admin_mails'
+                or app.request.attributes.get('_route') == 'admin_view_mail'
+                or app.request.attributes.get('_route') == 'admin_compose_mail'
+                or app.request.attributes.get('_route') == 'admin_sent_mails'
+                or app.request.attributes.get('_route') == 'admin_view_sent_mail' %}Emails{% endif %}
+        </h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="{{ path('home') }}">
+                    Dashboard
+                </a>
+            </li>
+            <li class="active">
+                <strong>
+                    {% if app.request.attributes.get('_route') == 'home' %}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_users' %}Liste des utilisateurs{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_view_user' %}Détail d'un utilisateur{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_edit_user' %}Modification d'un utilisateur{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_add_user' %}Ajout d'un utilisateur{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_shops' %}Liste des boutiques{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_add_shop' %}Ajout d'une boutique{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_mails' %}Liste des emails{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_view_mail'
+                        or app.request.attributes.get('_route') == 'admin_view_sent_mail' %}Détail d'un email{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_compose_mail' %}Rédaction d'un email{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_sent_mails' %}Emails envoyés{% endif %}
+                </strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            <a href="{% if app.request.attributes.get('_route') == 'admin_view_user' 
+                        or app.request.attributes.get('_route') == 'admin_edit_user' %}{{ path('admin_users') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_users' %}{{ path('admin_add_user') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_shops' %}{{ path('admin_add_shop') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_add_shop' %}{{ path('admin_shops') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_add_user' %}{{ path('admin_users') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_view_mail' %}{{ path('admin_mails') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_mails' %}{{ path('admin_compose_mail') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_sent_mails' %}{{ path('admin_mails') }}{% endif %}" class="btn btn-primary">
+                {% if app.request.attributes.get('_route') == 'admin_users' %}Ajouter un utilisateur{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_add_user' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_view_user' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_edit_user' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_add_user' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_shops' %}Ajouter une boutique{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_add_shop' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_mails' %}Ecrire un email{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_view_mail' %}Retour à la liste{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_sent_mails' %}Retour à la boite de réception{% endif %}
+            </a>
+        </div>
+    </div>
+</div>

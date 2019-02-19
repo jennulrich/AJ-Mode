@@ -1,0 +1,73 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block content %}
+<div class="contact-area pt-15">
+    <div class="container-fluid">
+        <div class="contact-map">
+            <div id="map"></div>
+        </div>
+    </div>
+    <div class="pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6">
+                    <div class="contact-info-area">
+                        <h2>Contact</h2>
+                        <p>Aenean sollicitudin, lorem est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500.</p>
+                        <div class="contact-info-wrap">
+                            <div class="single-contact-info">
+                                <div class="contact-info-icon">
+                                    <i class="ti-location-pin"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <p>11 Rue Mogador, 75009 Paris</p>
+                                </div>
+                            </div>
+                            <div class="single-contact-info">
+                                <div class="contact-info-icon">
+                                    <i class="ti-mobile"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <p>+33 6 10 51 86 15  /  +33 6 38 11 92 17</p>
+                                </div>
+                            </div>
+                            <div class="single-contact-info">
+                                <div class="contact-info-icon">
+                                    <i class="ti-email"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <p><a href="contact.html#">lc.modeparis@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6">
+                    <div class="pl-85">
+                        <div class="contact-from contact-shadow">
+                            {{form_start(form)}}
+                            <div id="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        {{ form_row(form.firstname, {'attr': {'placeholder': 'Prénom'} }) }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{ form_row(form.lastname, {'attr': {'placeholder': 'Nom'} }) }}
+                                    </div>
+                                </div>
+                                {{ form_row(form.email, {'attr': {'placeholder': 'Email'} }) }}
+                                {{ form_row(form.subject, {'attr': {'placeholder': 'Sujet'} }) }}
+                                {{ form_row(form.message, {'attr': {'placeholder': 'Message'} }) }}
+                            </div>
+                            <input name="submit" type="submit" value="Envoyer" class="submit submit-contact">
+                            <p class="form-messege"></p>
+                            {{form_end(form)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

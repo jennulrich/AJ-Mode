@@ -1,0 +1,82 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block content %}
+
+    <style>
+        .note-editing-area {
+            min-height: 300px;
+        }
+    </style>
+
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content mailbox-content">
+                        <div class="file-manager">
+                            <h5>Dossiers</h5>
+                            <ul class="folder-list m-b-md" style="padding: 0">
+                                <li><a href="{{ path('admin_mails') }}"> <i class="fa fa-inbox "></i> Boîte de réception
+                                        <span class="label label-warning pull-right">16</span> </a></li>
+                                <li><a href="{{ path('admin_sent_mails') }}"> <i class="fa fa-envelope-o"></i> Emails envoyés</a></li>
+                                <li><a href=""> <i class="fa fa-certificate"></i> Important</a></li>
+                                <li><a href=""> <i class="fa fa-file-text-o"></i> Brouillons <span
+                                                class="label label-danger pull-right">2</span></a></li>
+                                <li><a href=""> <i class="fa fa-trash-o"></i> Corbeille</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 animated fadeInRight">
+                <div class="mail-box-header">
+                    <h2>
+                        Nouveau message
+                    </h2>
+                </div>
+
+                <div class="mail-box">
+                    {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+                    <div class="mail-body">
+                        <div class="form-group" style="display: none;">
+                            <div class="col-sm-10">
+                                {{ form_widget(form.expediteur, {'attr': {'class': 'form-control'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.destinataire, null, { 'label_attr': {'class': 'col-sm-2 control-label text-uppercase'} }) }}
+                            <div class="col-sm-10">
+                                {{ form_widget(form.destinataire, {'attr': {'class': 'form-control'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.subject, null, { 'label_attr': {'class': 'col-sm-2 control-label'} }) }}
+                            <div class="col-sm-10">
+                                {{ form_widget(form.subject, {'attr': {'class': 'form-control'} }) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mail-text h-300">
+                            {{ form_widget(form.message, {'attr': {'class': 'summernote'}}) }}
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="mail-body text-right tooltip-demo">
+                        <button type="submit" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top">
+                            <i class="fa fa-reply"></i> Envoyer
+                        </button>
+                        <a href="{{ path('admin_mails') }}" class="btn btn-white btn-sm" data-toggle="tooltip"
+                           data-placement="top"><i class="fa fa-times"></i> Annuler</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    {{ form_end(form) }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

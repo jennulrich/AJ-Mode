@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+    <title>{% block title %}L&C Mode{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/front/plugin.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/front/icons.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/front/style-template.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/front/style.css') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body class="">
+<div id="wrapper">
+
+    {% include 'front/navbar.html.twig' %}
+
+    <div id="page-wrapper">
+
+        <div class="wrapper wrapper-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        {% include 'front/footer.html.twig' %}
+    </div>
+
+    {% block javascripts %}
+        <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+        <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+        <script src="{{ asset('js/jquery-1.12.0.min.js') }}"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="{{ asset('js/jquery.slimscroll.min.js') }}"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzcEM8z2_imGO8TMRmJEpDEahvZ7KYY_U"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
+        <script src="{{ asset('js/plugin.js') }}"></script>
+        <script src="{{ asset('js/map.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
+    {% endblock %}
+
+</div>
+</body>
+</html>

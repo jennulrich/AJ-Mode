@@ -1,0 +1,14 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block content %}
+    <div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
+    <p>Nom : {{user.lastname}}</p>
+    <p>Prènom : {{user.firstname}}</p>
+    <p>Email : {{user.email}}
+    <div class="row">
+        <div class="col-md-2 padding-btn">
+            <button type="button" class="btn btn-valid"><a class="a-btn-valid" href="{{ path('admin_edit_user', { 'id': user.id }) }}">Modifier</a></button>
+        </div>
+    </div>
+    </div>
+{% endblock %}

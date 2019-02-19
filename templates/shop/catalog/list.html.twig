@@ -1,0 +1,122 @@
+{% extends 'shop/layout.html.twig' %}
+
+{% block content %}
+    <div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" placeholder="Rechercher un article" class="input form-control" id="filter">
+                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Rechercher</button>
+                                </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered footable" data-filter="#filter" data-paging="true">
+            <thead>
+            <tr>
+                <th data-sort-ignore="true">Référence</th>
+                <th data-sort-ignore="true">Image</th>
+                <th data-sort-ignore="true">Nom du produit</th>
+                <th data-sort-ignore="true">Descriptif</th>
+                <th data-sort-ignore="true">Composition</th>
+                <th data-sort-ignore="true">Prix</th>
+                <th data-sort-ignore="true">Stock</th>
+                <th class="text-center" data-sort-ignore="true">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for catalog in catalogs %}
+                <tr>
+                    <td>{{ catalog.ref }}</td>
+                    <td style="vertical-align: middle;">
+                        <img src="{{ catalog.image }}" alt="" width="60px" height="60px">
+                    </td>
+                    <td>
+                        {{ catalog.title }}
+                    </td>
+                    <td>
+                        {{ catalog.description }}
+                    </td>
+                    <td>
+                        {{ catalog.composition }}
+                    </td>
+                    <td width="100px">
+                        {{ catalog.price }} €
+                    </td>
+                    <td>
+                        {{ catalog.stock }}
+                    </td>
+                    <td width="100px" class="text-center">
+                        <ul class="" style="list-style-type: none; padding: 0; margin: 0;">
+                            <li style="display: inline-block; padding: 0 5px;">
+                                <a href="{{ path('shop_view_catalog', { 'id': catalog.id }) }}" class="action"
+                                   title="Détail"> <i class="fa fa-eye"></i></a>
+                            </li>
+                            <li style="display: inline-block; padding: 0 5px;">
+                                <a href="{{ path('shop_edit_catalog', { 'id': catalog.id }) }}" class="action"
+                                   title="Editer"><i class="fa fa-edit"></i></a>
+                            </li>
+                            <li style="display: inline-block; padding: 0 5px;">
+                                <a href=""
+                                   class="action delete-alert" data-toggle="modal" data-target="#{{ catalog.id }}"><i class="fa fa-trash"></i></a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="8">
+                    <ul class="pagination pull-right"></ul>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+    <style>
+        .modal h2{
+            color: #575757;
+            /*font-size: 30px;*/
+            font-size: 19px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: none;
+            position: relative;
+            margin: 25px 0;
+            padding: 0;
+            line-height: 40px;
+            display: block;
+        }
+
+        .modal-body {
+            border-radius: 3px;
+        }
+    </style>
+    <!-- Modal confirmation de suppression -->
+    {% for catalog in catalogs %}
+        <div class="modal inmodal" id="{{ catalog.id }}" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog animated fadeIn">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-body">
+                        <div class="text-center" style="margin-bottom: 25px;">
+                            <i class="fa fa-exclamation-circle animated bounceIn" style="font-size: 30pt; color: orange;"></i>
+                            <h2>Êtes-vous sûr de vouloir supprimer cet article ?</h2>
+                            <span>Cet article sera définitivement supprimé de votre catalogue.</span>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color: #D0D0D0; border: 1px solid #D0D0D0; color: white;">Non</button>
+                            <a href="{{ path('shop_delete_catalog', { 'id': catalog.id}) }}" class="btn btn-primary" data-target="#confirm-delete" style="background-color: #DD6B55; border: 1px solid #DD6B55;">Oui</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

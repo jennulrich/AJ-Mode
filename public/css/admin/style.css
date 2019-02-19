@@ -1,0 +1,41 @@
+.formulaire div input{
+	width: 50%;
+    border-radius: 1px;
+    border: 1px solid #e7eaec;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.btn-valid{
+	border: 1px solid #4e194b;
+	border-radius: 3px;
+	color: #4e194b;
+}
+.a-btn-valid{
+	text-decoration: none;
+	color: #4e194b;
+}
+.a-btn-valid:hover{
+	color: #4e194b;
+}
+.btn-cancel{
+	border-radius: 3px;
+	color: white;
+	background-color: #4e194b;
+	margin-left: 7px;
+}
+.btn-cancel:hover{
+	color: white;
+}
+.padding-btn{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.padding-end{
+	padding-bottom: 20px;
+}
+.img-profile{
+	width: 55%;
+	background-color: white;
+	border-radius: 3px;
+	padding: 5px;
+}

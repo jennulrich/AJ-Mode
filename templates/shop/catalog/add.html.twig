@@ -1,0 +1,46 @@
+{% extends 'shop/layout.html.twig' %}
+
+{% block content %}
+    <style>
+        label {
+            width: 15%;
+        }
+    </style>
+<div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
+    <div class="form container-fluid">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <div class="formulaire">
+            {{ form_row(form.ref) }}
+        </div>
+        <div class="formulaire">
+            {{ form_row(form.category) }}
+        </div>
+        <div class="formulaire">
+            {{ form_row(form.image) }}
+        </div>
+        <div class="formulaire">
+            {{ form_row(form.title) }}
+        </div>
+        <div class="formulaire">
+            {{ form_row(form.description) }}
+        </div>
+        <div class="formulaire">
+            {{ form_row(form.composition) }}
+        </div>
+        <div class="formulaire">
+            {{ form_row(form.price) }}
+        </div>
+        <div class="formulaire">
+            {{ form_row(form.stock) }}
+        </div>
+        <div class="row">
+            <div class="col-md-6 padding-end">
+                <button type="submit" class="btn btn-valid">Ajouter</button>
+                <a href="{{ path('shop_catalogs') }}" class="btn btn-cancel">Annuler</a>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

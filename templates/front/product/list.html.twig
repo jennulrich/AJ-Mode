@@ -1,0 +1,28 @@
+<style>
+    div {
+        width: 15%;
+        display: inline-block;
+    }
+    img {
+        width: 100%;
+    }
+</style>
+
+
+<h1>Liste des produits</h1>
+
+{% for product in products %}
+    <div>
+        <p>{{ product.name }}</p>
+        <p>
+            <img src="{{ product.image }}" alt="">
+        </p>
+        <p>{{ product.price }} €</p>
+        <form action="" method="post">
+            <input type="text" name="quantity" class="" value="1">
+            <input type="hidden" name="name" value="{{ product.name }}">
+            <input type="hidden" name="price" value="{{ product.price }}">
+            <input type="submit" name="add_to_cart" value="Ajouter au panier">
+        </form>
+    </div>
+{% endfor %}
