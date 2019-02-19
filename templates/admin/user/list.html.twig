@@ -1,8 +1,8 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block content %}
-    <div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
-        <table class="table table-bordered">
+    {#<div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
+        <table class="table table-bordered footable">
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -36,5 +36,168 @@
             {% endfor %}
             </tbody>
         </table>
+    </div>#}
+
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="input-group">
+                            <input type="text" placeholder="Rechercher un utilisateur" class="input form-control" id="filter">
+                            <span class="input-group-btn">
+                                        <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Rechercher</button>
+                                </span>
+                        </div>
+                        <div class="clients-list">
+                            <ul class="nav nav-tabs">
+                                <!--<span class="pull-right small text-muted">1406 Elements</span>-->
+                                <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-user"></i>
+                                        Utilisateurs</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane active">
+                                    <div class="full-height-scroll">
+                                        <div class="table-responsive">
+                                            <table class="table table-stripped footable" data-filter=#filter>
+                                                <tbody>
+                                                {% for user in users %}
+                                                        <tr>
+                                                            <td>
+                                                                <a data-toggle="tab" href="#contact-{{ user.id }}"
+                                                                   class="client-link">{{ user.firstname }} {{ user.lastname }}</a>
+                                                            </td>
+                                                            <td class="contact-type"><i class="fa fa-envelope"> </i>
+                                                            </td>
+                                                            <td> {{ user.email }}</td>
+                                                            <td class="client-status"><a href=""
+                                                                                         class="btn btn-default btn-xs action delete-alert"
+                                                                                         data-toggle="modal"
+                                                                                         data-target="#{{ user.id }}">Supprimer</a>
+                                                            </td>
+                                                        </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <td colspan="8">
+                                                        <ul class="pagination pull-right"></ul>
+                                                    </td>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div class="tab-content">
+                            {% for key in users|keys %}
+                                    <div id="contact-{{ users[key].id }}"
+                                         class="tab-pane {% if key == 0 %}active{% endif %}">
+                                        <div class="row m-b-lg">
+                                            <div class="col-lg-12 text-center">
+                                                <h2>{{ users[key].firstname }} {{ users[key].lastname }}</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <strong>
+                                                    Adresse
+                                                </strong>
+                                                <p>
+                                                    {{ users[key].address1 }}
+                                                </p>
+                                                <p>
+                                                    {{ users[key].zipCode }} {{ users[key].city }}
+                                                </p>
+                                                <strong>
+                                                    N° de téléphone
+                                                </strong>
+                                                <p>{{ users[key].phoneNumber }}</p>
+                                                <strong>
+                                                    Email
+                                                </strong>
+                                                <p>{{ users[key].email }}</p>
+                                                <strong>
+                                                    Rôle
+                                                </strong>
+                                                <p>
+                                                    {% if users[key].isAdmin == 1 %}
+                                                        Administrateur
+                                                    {% endif %}
+                                                    {% if users[key].isShop == 1 %}
+                                                        Gérant de boutique
+                                                    {% endif %}
+                                                    {% if users[key].isCustomer == 1 %}
+                                                        Client
+                                                    {% endif %}
+                                                </p>
+                                                <a href="{{ path('admin_edit_user', { 'id': users[key].id }) }}"
+                                                   type="button" class="btn btn-primary btn-sm btn-block"><i
+                                                            class="fa fa-pencil"></i> Modifier les informations
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <style>
+        .modal h2 {
+            color: #575757;
+            /*font-size: 30px;*/
+            font-size: 19px;
+            text-align: center;
+            font-weight: 600;
+            text-transform: none;
+            position: relative;
+            margin: 25px 0;
+            padding: 0;
+            line-height: 40px;
+            display: block;
+        }
+
+        .modal-body {
+            border-radius: 3px;
+        }
+    </style>
+    <!-- Modal confirmation de suppression -->
+    {% for user in users %}
+        <div class="modal inmodal" id="{{ user.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog animated fadeIn">
+                <div class="modal-content animated fadeIn">
+                    <div class="modal-body">
+                        <div class="text-center" style="margin-bottom: 25px;">
+                            <i class="fa fa-exclamation-circle animated bounceIn"
+                               style="font-size: 30pt; color: orange;"></i>
+                            <h2>Êtes-vous sûr de vouloir supprimer ce client ?</h2>
+                            <span>Ce client sera définitivement supprimé de la liste.</span>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                    style="background-color: #D0D0D0; border: 1px solid #D0D0D0; color: white;">Non
+                            </button>
+                            <a href="{{ path('admin_delete_user', { 'id': user.id}) }}" class="btn btn-primary"
+                               data-target="#confirm-delete"
+                               style="background-color: #DD6B55; border: 1px solid #DD6B55;">Oui</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}

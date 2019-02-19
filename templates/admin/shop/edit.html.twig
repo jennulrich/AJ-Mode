@@ -1,0 +1,37 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block content %}
+    <style>
+        label {
+            width: 20%;
+        }
+    </style>
+    <div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
+        <div class="form container-fluid">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div class="formulaire">
+                {{ form_row(form.shop_name) }}
+            </div>
+            <div class="formulaire">
+                {{ form_row(form.owner) }}
+            </div>
+            <div class="formulaire">
+                {{ form_row(form.address) }}
+            </div>
+            <div class="formulaire">
+                {{ form_row(form.email) }}
+            </div>
+            <div class="formulaire">
+                {{ form_row(form.phone) }}
+            </div>
+            <div class="row">
+                <div class="col-md-6 padding-end">
+                    <button type="submit" class="btn btn-valid">Modifier</button>
+                    <a href="{{ path('admin_shops') }}" class="btn btn-cancel">Annuler</a>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

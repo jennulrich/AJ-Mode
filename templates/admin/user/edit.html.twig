@@ -1,6 +1,11 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block content %}
+	<style>
+		label {
+			width: 15%;
+		}
+	</style>
 <div class="row wrapper border-bottom white-bg" style="padding-top: 20px; margin-bottom: 20px">
 	<div class="form container-fluid">
 	    {{ form_start(form) }}
@@ -11,9 +16,24 @@
 	    <div class="formulaire">
 	        {{ form_row(form.firstname) }}
 	    </div>
-	    <div class="formulaire">
-	        {{ form_row(form.email) }}
-	    </div>
+		<div class="formulaire">
+            {{ form_row(form.address_1) }}
+		</div>
+		<div class="formulaire">
+            {{ form_row(form.address_2) }}
+		</div>
+		<div class="formulaire">
+            {{ form_row(form.zip_code) }}
+		</div>
+		<div class="formulaire">
+            {{ form_row(form.city) }}
+		</div>
+		<div class="formulaire">
+            {{ form_row(form.phone_number) }}
+		</div>
+		<div class="formulaire">
+            {{ form_row(form.email) }}
+		</div>
 	    <div class="row">
 	        <div class="col-md-6 padding-end">
 	            <button type="submit" class="btn btn-valid" >Modifier</button>
