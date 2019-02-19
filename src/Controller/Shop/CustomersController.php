@@ -2,9 +2,11 @@
 
 namespace App\Controller\Shop;
 
-use App\Entity\Customers;
-use App\Form\CustomersType;
-use App\Manager\CustomersManager;
+use App\Entity\User;
+use App\Form\UserType;
+use App\Manager\UserManager;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,12 +19,12 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class CustomersController extends Controller
 {
-    /** @var CustomersManager */
-    private $customersManager;
+    /** @var UserManager */
+    private $userManager;
 
-    public function __construct(CustomersManager $customersManager)
+    public function __construct(UserManager $userManager)
     {
-        $this->customersManager = $customersManager;
+        $this->userManager = $userManager;
     }
 
     /**
@@ -32,7 +34,7 @@ class CustomersController extends Controller
      */
     public function viewAction(int $id): Response
     {
-        $customer = $this->customersManager->get($id);
+        $customer = $this->userManager->get($id);
 
         return $this->render('shop/customers/detail.html.twig', [
             "customer" => $customer
@@ -45,7 +47,7 @@ class CustomersController extends Controller
      */
     public function listAction(): Response
     {
-        $customers = $this->customersManager->getList();
+        $customers = $this->userManager->getList();
 
         return $this->render('shop/customers/list.html.twig', [
             "customers" => $customers,
@@ -60,13 +62,13 @@ class CustomersController extends Controller
      */
     public function addAction(Request $request): Response
     {
-        $customer = new Customers();
+        $customer = new User();
 
-        $form = $this->createForm(CustomersType::class, $customer);
+        $form = $this->createForm(UserType::class, $customer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->customersManager->save($customer);
+            $this->userManager->save($customer);
 
             return $this->redirectToRoute('shop_customers');
         }
@@ -82,14 +84,14 @@ class CustomersController extends Controller
      */
     public function editAction(int $id, Request $request)
     {
-        $customer = $this->customersManager->get($id);
+        $customer = $this->userManager->get($id);
 
         //$user->setImage(null);
-        $form = $this->createForm(CustomersType::class, $customer);
+        $form = $this->createForm(UserType::class, $customer);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            $this->customersManager->save($customer);
+            $this->userManager->save($customer);
 
             return $this->redirectToRoute('shop_view_customer', [
                 "id"=>$customer->getId(),
@@ -106,9 +108,9 @@ class CustomersController extends Controller
      * @Route("/{id}/delete", name="shop_delete_customer", requirements={"id"="\d+"})
      * @return Response
      */
-    public function DeleteAction(Customers $customers): Response
+    public function DeleteAction(User $user): Response
     {
-        $this->customersManager->remove($customers);
+        $this->userManager->remove($user);
 
         return $this->redirectToRoute('shop_customers');
     }

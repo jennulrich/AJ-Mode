@@ -27,11 +27,17 @@ class UserFixtures extends Fixture
             $user = new User();
             $user->setFirstname($faker->firstName);
             $user->setLastname($faker->lastName);
+            $user->setAddress1($faker->streetAddress);
+            $user->setAddress2($faker->address);
+            $user->setZipCode($faker->randomNumber(5));
+            $user->setCity($faker->city);
+            $user->setPhoneNumber($faker->phoneNumber);
             $user->setEmail($faker->companyEmail);
             $user->setPassword($this->passwordEncoder->encodePassword($user,
                     'test'));
             $user->setIsAdmin($faker->boolean);
             $user->setIsShop($faker->boolean);
+            $user->setIsCustomer($faker->boolean);
             $manager->persist($user);
         }
         $manager->flush();
