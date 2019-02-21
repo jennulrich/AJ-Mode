@@ -1,40 +1,33 @@
 {% extends 'front/layout.html.twig' %}
 
 {% block content %}
-<div class="breadcrumb-area bg-img pt-230 pb-152" style="background-image: url('../img/breadcrumb-4.jpg');">
+<div class="breadcrumb-area bg-img pt-90 pb-80" style="background-color: #f6f6f6;">
     <div class="container">
         <div class="breadcrumb-content breadcrumb-black2 text-center">
             <h2>Validation</h2>
             <ul>
                 <li>
-                    <a href="#">Accueil</a>
+                    <a href="{{ path('home-user') }}">Accueil</a>
                 </li>
                 <li>
-                    <a href="{{ path('home-user') }}">Boutique</a>
+                    <a href="{{ path('shop') }}">Boutique</a>
                 </li>
                 <li class="active">Validation</li>
             </ul>
         </div>
     </div>
 </div>
-<!-- main-search start -->
-<div class="main-search-active">
-    <div class="sidebar-search-icon">
-        <button class="search-close"><span class="ti-close"></span></button>
-    </div>
-    <div class="sidebar-search-input">
-        <form>
-            <div class="form-search">
-                <input id="search" class="input-text" value="" placeholder="Search Entire Store" type="search">
-                <button>
-                    <i class="ti-search"></i>
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="checkout-area pt-95 pb-100">
+<div class="checkout-area pt-90 pb-90">
     <div class="container">
+        <div class="parcour-paiement pb-70">
+            <i class="fa fa-shopping-bag parcour-paiement-icone {% if app.request.attributes.get('_route') == 'checkout' %}icone-active{% endif %}"></i>
+            <hr class="parcour-paiement-hr {% if app.request.attributes.get('_route') == 'checkout' %}hr-active{% endif %}"/>
+            <i class="fa fa-pencil parcour-paiement-icone {% if app.request.attributes.get('_route') == 'checkout' %}icone-active{% endif %}"></i>
+            <hr class="parcour-paiement-hr"/>
+            <i class="fa fa-credit-card parcour-paiement-icone"></i>
+            <hr class="parcour-paiement-hr"/>
+            <i class="fa fa-check parcour-paiement-icone"></i>
+        </div>
         <div class="row">
             <div class="col-lg-7">
                 <div class="billing-info-wrap">
@@ -54,7 +47,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="billing-info mb-25">
-                                <label>Nome de la compagnie</label>
+                                <label>Nom de la compagnie</label>
                                 <input type="text">
                             </div>
                         </div>
@@ -104,21 +97,12 @@
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="billing-info mb-25">
-                                <label>Addresse électronique</label>
+                                <label>Email</label>
                                 <input type="text">
                             </div>
                         </div>
                     </div>
-                    <div class="checkout-account mb-50">
-                        <input class="checkout-toggle2" type="checkbox">
-                        <span>Créer un compte ?</span>
-                    </div>
-                    <div class="checkout-account-toggle open-toggle2 mb-30">
-                        <input placeholder="Email" type="email">
-                        <input placeholder="Mot de passe" type="password">
-                        <button class="btn-hover checkout-btn" type="submit">S'inscrire</button>
-                    </div>
-                    <div class="additional-info-wrap">
+                    <div class="additional-info-wrap pt-50 pb-30">
                         <h4>Information Additionnelle</h4>
                         <div class="additional-info">
                             <label>Notes</label>
@@ -133,27 +117,27 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="billing-info mb-25">
-                                    <label>First Name</label>
+                                    <label>Prènom</label>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="billing-info mb-25">
-                                    <label>Last Name</label>
+                                    <label>Nom de famille</label>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="billing-info mb-25">
-                                    <label>Company Name</label>
+                                    <label>Nom de la compagnie</label>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="billing-select mb-25">
-                                    <label>Country</label>
+                                    <label>Pays</label>
                                     <select>
-                                        <option>Select a country</option>
+                                        <option>Choississez un pays</option>
                                         <option>Azerbaijan</option>
                                         <option>Bahamas</option>
                                         <option>Bahrain</option>
@@ -164,38 +148,38 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="billing-info mb-25">
-                                    <label>Street Address</label>
-                                    <input class="billing-address" placeholder="House number and street name" type="text">
-                                    <input placeholder="Apartment, étage, unit etc." type="text">
+                                    <label>Adresse</label>
+                                    <input class="billing-address" placeholder="Numéro de rue et adresse" type="text">
+                                    <input placeholder="Apartement, suite, code etc." type="text">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="billing-info mb-25">
-                                    <label>Town / City</label>
+                                    <label>Ville</label>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="billing-info mb-25">
-                                    <label>State / County</label>
+                                    <label>Etat / Pays</label>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="billing-info mb-25">
-                                    <label>Postcode / ZIP</label>
+                                    <label>Code postal</label>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="billing-info mb-25">
-                                    <label>Phone</label>
+                                    <label>Téléphone</label>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="billing-info mb-25">
-                                    <label>Email Address</label>
+                                    <label>Email</label>
                                     <input type="text">
                                 </div>
                             </div>

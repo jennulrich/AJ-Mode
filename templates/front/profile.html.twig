@@ -1,0 +1,194 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block content %}
+    <div class="breadcrumb-area bg-img pt-90 pb-80" style="background-color: #f6f6f6;">
+        <div class="container">
+            <div class="breadcrumb-content breadcrumb-black2 text-center">
+                <h2>Mon compte</h2>
+                <ul>
+                    <li>
+                        <a href="{{ path('home-user') }}">Accueil</a>
+                    </li>
+                    <li class="active">Mon compte</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-area pt-75 pb-80 container-padding-res">
+        <div class="container">
+            <div class="center-menu-profile portfolio-menu-active portfolio-menu-1 pro-menu-btn text-center mb-50">
+                <ul class="nav center-menu-profile" id="menu-profile">
+                    <li class="btn-menu-profile"><a class="active" data-toggle="tab" href="#tab-1"> Mon profil </a></li>
+                    <li class="btn-menu-profile"><a data-toggle="tab" href="#tab-2"> Mes commandes </a></li>
+                    <li class="btn-menu-profile"><a data-toggle="tab" href="#tab-3"> Mes adresses </a></li>
+                    <li class="btn-menu-profile"><a data-toggle="tab" href="#tab-4"> Liste d'envie </a></li>
+                    <li class="btn-menu-profile"><a data-toggle="tab" href="#tab-5"> Service client </a></li>
+                </ul>
+                <div class="tab-content pt-50 pb-80">
+                    <div id="tab-1" class="tab-pane active">
+                        <div class="full-height-scroll">
+                            <div class="table-responsive">
+                                <h3 class="pb-30">Mes informations</h3>
+                                <p>Nom : Smith</p>
+                                <p>Prénom : Lola</p>
+                                <p>Anniversaire : 28/12/1993</p>
+                                <p>Email : test@gmail.fr</p>
+                                <p>Genre : Femme / Homme</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-pane">
+                        <div class="full-height-scroll">
+                            <div class="table-responsive">
+                                <h3 class="pb-30">Mes commandes</h3>
+                                <table class="table table-bordered footable" data-filter="#filter" data-paging="true">
+                                    <thead>
+                                    <tr>
+                                        <th data-sort-ignore="true">Numéro de commande</th>
+                                        <th data-sort-ignore="true">Les articles</th>
+                                        <th data-sort-ignore="true">Date</th>
+                                        <th data-sort-ignore="true">Total</th>
+                                        <th data-sort-ignore="true">Statut</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            765432GTRE7
+                                        </td>
+                                        <td style="vertical-align: middle;">
+                                            <img src="../img/product/product.jpg" alt="" width="70px" height="50px">
+                                        </td>
+                                        <td>
+                                            29/04/2018
+                                        </td>
+                                        <td>
+                                            87€
+                                        </td>
+                                        <td>
+                                            Livré
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-3" class="tab-pane">
+                        <div class="full-height-scroll">
+                            <div class="table-responsive">
+                                <h3 class="pb-30">Mes adresses</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-4" class="tab-pane">
+                        <div class="full-height-scroll">
+                            <div class="table-responsive">
+                                <h3 class="pb-30">Ma liste d'envie</h3>
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="shop-wrap mb-35">
+                                            <div class="shop-img">
+                                                <a href="{{ path('detail-product') }}">
+                                                    <img src="../img/product/product.jpg" alt="">
+                                                </a>
+                                                <div class="shop-hover">
+                                                    <div class="shop-card" style="width: 100%;">
+                                                        <a href="#" title="Add To Cart">Ajouter au panier <i class="ti-shopping-cart"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="shop-content">
+                                                <div class="shop-name">
+                                                    <h4><a href="{{ path('detail-product') }}">Product Name</a></h4>
+                                                </div>
+                                                <div class="shop-price">
+                                                    <span>$329</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="shop-wrap mb-35">
+                                            <div class="shop-img">
+                                                <a href="{{ path('detail-product') }}">
+                                                    <img src="../img/product/product.jpg" alt="">
+                                                </a>
+                                                <div class="shop-hover">
+                                                    <div class="shop-card" style="width: 100%;">
+                                                        <a href="#" title="Add To Cart">Ajouter au panier <i class="ti-shopping-cart"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="shop-content">
+                                                <div class="shop-name">
+                                                    <h4><a href="{{ path('detail-product') }}">Product Name</a></h4>
+                                                </div>
+                                                <div class="shop-price">
+                                                    <span>$329</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="shop-wrap mb-35">
+                                            <div class="shop-img">
+                                                <a href="{{ path('detail-product') }}">
+                                                    <img src="../img/product/product.jpg" alt="">
+                                                </a>
+                                                <div class="shop-hover">
+                                                    <div class="shop-card" style="width: 100%;">
+                                                        <a href="#" title="Add To Cart">Ajouter au panier <i class="ti-shopping-cart"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="shop-content">
+                                                <div class="shop-name">
+                                                    <h4><a href="{{ path('detail-product') }}">Product Name</a></h4>
+                                                </div>
+                                                <div class="shop-price">
+                                                    <span>$329</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="shop-wrap mb-35">
+                                            <div class="shop-img">
+                                                <a href="{{ path('detail-product') }}">
+                                                    <img src="../img/product/product.jpg" alt="">
+                                                </a>
+                                                <div class="shop-hover">
+                                                    <div class="shop-card" style="width: 100%;">
+                                                        <a href="#" title="Add To Cart">Ajouter au panier <i class="ti-shopping-cart"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="shop-content">
+                                                <div class="shop-name">
+                                                    <h4><a href="{{ path('detail-product') }}">Product Name</a></h4>
+                                                </div>
+                                                <div class="shop-price">
+                                                    <span>$329</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-5" class="tab-pane">
+                        <div class="full-height-scroll">
+                            <div class="table-responsive">
+                                <h3 class="pb-30">Service client</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

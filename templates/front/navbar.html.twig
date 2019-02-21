@@ -61,14 +61,7 @@
         <div class="header-social mr-85 main-menu">
           <nav>
             <ul>
-              <li><a href="#"><i class="fa fa-user"></i> Mon profil</a>
-                <ul class="submenu">
-                  <li class="detail-list-shop"><a href="#">Mes commandes</a></li>
-                  <li class="detail-list-shop"><a href="#">Mes adresses</a></li>
-                  <li class="detail-list-shop"><a href="#">Ma liste d'envie</a></li>
-                  <li class="detail-list-shop"><a href="#">Service client</a></li>
-                </ul>
-              </li>
+              <li><a href="{{ path('profile') }}"><i class="fa fa-user"></i> Mon compte</a></li>
               <li><a href="{{ path('cart') }}"><i class="fa fa-shopping-bag"></i> Panier</a>
                 <ul class="submenu">
                   <li>Product name</li>

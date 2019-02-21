@@ -212,6 +212,30 @@ a:hover{
 .cart-table table td.cart-remove a:hover{
 	color: #38AF3F;
 }
+.parcour-paiement{
+	text-align: center;
+}
+.parcour-paiement-icone{
+	border: 2px solid #BCBCBC;
+	border-radius: 50%;
+	padding: 13px;
+	font-size: 20px;
+	color: #BCBCBC;
+}
+hr.parcour-paiement-hr{
+	background-color: #BCBCBC;
+	display: inline-block;
+	width: 120px;
+	margin: 0 10px 5px 10px;
+	height: 2px;
+}
+.icone-active{
+	border: 2px solid #4e194b;
+	color: #4e194b;
+}
+hr.hr-active{
+	background-color: #4e194b;
+}
 /**Fin page CART **/
 
 /**Page CHECKOUT**/
@@ -235,3 +259,26 @@ a:hover{
 	background-color: #4e194b;
 }
 /**Fin page LOGIN**/
+
+/**Page PROFILE**/
+ul#menu-profile li.btn-menu-profile a{
+	letter-spacing: 1px;
+	line-height: 1;
+	margin: 0 39px 0 0;
+	padding: 0;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.3s linear 0s;
+	font-size: 12px;
+	font-weight: 500;
+}
+ul#menu-profile li.btn-menu-profile a.active, ul#menu-profile li a:hover{
+	color: #882C83;
+	border-bottom: 2px solid #882C83;
+	padding-bottom: 6px;
+}
+.center-menu-profile{
+	justify-content: center;
+}
+/**Fin page PROFILE**/
