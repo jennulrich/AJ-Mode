@@ -281,4 +281,24 @@ ul#menu-profile li.btn-menu-profile a.active, ul#menu-profile li a:hover{
 .center-menu-profile{
 	justify-content: center;
 }
+.shortcode-accordion:hover h4 a, .shortcode-accordion2:hover h4 a{
+	color: #882C83;
+}
+.shortcode-accordion2 .panel-title a::before{
+	color: #882C83;
+}
+.contact-from form input.submit:hover{
+	background-color: #4e194b;
+}
+.supprimer-adress, .supprimer-adress:hover{
+	color: #38AF3F;
+	border-bottom: 1px solid #38AF3F;
+	margin-right: 20px;
+}
+
+.modifier-adress{
+	color: #882C83;
+	border-bottom: 1px solid #882C83;
+	margin-left: 20px;
+}
 /**Fin page PROFILE**/
