@@ -19,10 +19,69 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        // On configure dans quelles langues nous voulons nos données
+        $this->loadAdmin($manager);
+        $this->loadCustomer($manager);
+        $this->loadShop($manager);
+    }
+
+    public function loadAdmin(ObjectManager $manager)
+    {
+        // On configure dans quelle langue nous voulons nos données
         $faker = Faker\Factory::create('fr_FR');
 
-        // on créé 10 personnes
+        // On créé 2 administrateurs
+        for ($i = 0; $i < 2; $i++) {
+            $user = new User();
+            $user->setFirstname($faker->firstName);
+            $user->setLastname($faker->lastName);
+            $user->setAddress1($faker->streetAddress);
+            $user->setAddress2($faker->address);
+            $user->setZipCode($faker->randomNumber(5));
+            $user->setCity($faker->city);
+            $user->setPhoneNumber($faker->phoneNumber);
+            $user->setEmail($faker->companyEmail);
+            $user->setPassword($this->passwordEncoder->encodePassword($user,
+                'test'));
+            $user->setIsAdmin(true);
+            $user->setIsShop(false);
+            $user->setIsCustomer(false);
+            $manager->persist($user);
+        }
+        $manager->flush();
+    }
+
+    public function loadCustomer(ObjectManager $manager)
+    {
+        // On configure dans quelle langue nous voulons nos données
+        $faker = Faker\Factory::create('fr_FR');
+
+        // On créé 10 clients
+        for ($i = 0; $i < 10; $i++) {
+            $user = new User();
+            $user->setFirstname($faker->firstName);
+            $user->setLastname($faker->lastName);
+            $user->setAddress1($faker->streetAddress);
+            $user->setAddress2($faker->address);
+            $user->setZipCode($faker->randomNumber(5));
+            $user->setCity($faker->city);
+            $user->setPhoneNumber($faker->phoneNumber);
+            $user->setEmail($faker->companyEmail);
+            $user->setPassword($this->passwordEncoder->encodePassword($user,
+                'test'));
+            $user->setIsAdmin(false);
+            $user->setIsShop(false);
+            $user->setIsCustomer(true);
+            $manager->persist($user);
+        }
+        $manager->flush();
+    }
+
+    public function loadShop(ObjectManager $manager)
+    {
+        // On configure dans quelle langue nous voulons nos données
+        $faker = Faker\Factory::create('fr_FR');
+
+        // On créé 10 gérants de boutique
         for ($i = 0; $i < 10; $i++) {
             $user = new User();
             $user->setFirstname($faker->firstName);
@@ -35,9 +94,9 @@ class UserFixtures extends Fixture
             $user->setEmail($faker->companyEmail);
             $user->setPassword($this->passwordEncoder->encodePassword($user,
                     'test'));
-            $user->setIsAdmin($faker->boolean);
-            $user->setIsShop($faker->boolean);
-            $user->setIsCustomer($faker->boolean);
+            $user->setIsAdmin(false);
+            $user->setIsShop(true);
+            $user->setIsCustomer(false);
             $manager->persist($user);
         }
         $manager->flush();
