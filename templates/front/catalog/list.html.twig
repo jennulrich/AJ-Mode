@@ -3,10 +3,14 @@
 {% block content %}
 <div class="breadcrumb-area bg-img pt-230 pb-152" style="background-image: url('../img/banner-6.jpg');">
     <div class="container">
-        <div class="breadcrumb-content title-shop text-center">
-            <h2>ZARA</h2>
+        <div class="breadcrumb-content breadcrumb-black2 text-center">
+            <h2 class="mb-0">ZARA</h2>
+            <h5 class="pb-13">Paris 9éme (75009)</h5>
             <ul>
-                <li>Paris 9éme (75009)</li>
+                <li>
+                    <a href="{{ path('home-user') }}">Accueil</a>
+                </li>
+                <li class="active">Boutiques</li>
             </ul>
         </div>
     </div>
@@ -36,10 +40,10 @@
                                 </div>
                                 <div class="shop-content">
                                     <div class="shop-name">
-                                        <h4><a href="{{ path('front_shop_view_catalog', { 'id': catalog.id }) }}">Product Name</a></h4>
+                                        <h4><a href="{{ path('front_shop_view_catalog', { 'id': catalog.id }) }}">{{ catalog.title }}</a></h4>
                                     </div>
                                     <div class="shop-price">
-                                        <span>$329</span>
+                                        <span>{{ catalog.price }} €</span>
                                     </div>
                                 </div>
                             </div>

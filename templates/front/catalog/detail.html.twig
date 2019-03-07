@@ -3,10 +3,17 @@
 {% block content %}
 <div class="breadcrumb-area bg-img pt-230 pb-152" style="background-image: url('../img/banner-6.jpg');">
     <div class="container">
-        <div class="breadcrumb-content title-shop text-center">
-            <h2>ZARA</h2>
+        <div class="breadcrumb-content breadcrumb-black2 text-center">
+            <h2 class="mb-0">ZARA</h2>
+            <h5 class="pb-13">Paris 9éme (75009)</h5>
             <ul>
-                <li>Paris 9éme (75009)</li>
+                <li>
+                    <a href="{{ path('home-user') }}">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ path('front_shop_catalogs') }}">Boutiques</a>
+                </li>
+                <li class="active">Détail</li>
             </ul>
         </div>
     </div>
@@ -29,7 +36,7 @@
             </div>
             <div class="product-sidebar-active col-lg-6 col-md-7">
                 <div class="product-details-content pl-10">
-                    <h2>Product Name</h2>
+                    <h2>{{ catalog.title }}</h2>
                     <div class="pro-details-rating-wrap">
                         <div class="pro-details-rating">
                             <i class="ti-star theme-color"></i>
@@ -40,8 +47,8 @@
                         </div>
                         <span>(2 commentaires client)</span>
                     </div>
-                    <h3>329€</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunca augue quis neque ultrices placerat sit amet quis mauris. Integer urna libero, aliquet neque posu ullamcorper fringilla dolor. Maecenas id mattis magna. </p>
+                    <h3>{{ catalog.price }} €</h3>
+                    <p>{{ catalog.description }}</p>
                     <div class="pro-details-size-color2 mt-30">
                         <div class="pro-details-color2-wrap">
                             <span>Couleur</span>
@@ -83,15 +90,14 @@
                     <div class="pro-details-info-wrap">
                         <div class="pro-details-info-list">
                             <ul>
-                                <li class="pro-details-info-title">SKU</li>
-                                <li>00010002</li>
+                                <li class="pro-details-info-title">REF</li>
+                                <li>{{ catalog.ref }}</li>
                             </ul>
                         </div>
                         <div class="pro-details-info-list">
                             <ul>
                                 <li class="pro-details-info-title">Categories</li>
-                                <li><a href="#">Women,</a></li>
-                                <li><a href="#">Dress</a></li>
+                                <li>{{ catalog.category }}</li>
                             </ul>
                         </div>
                         <div class="pro-details-info-list">
@@ -126,9 +132,8 @@
                     <div class="product-anotherinfo-wrapper">
                         <ul>
                             <li><span>Poids</span>400 g</li>
-                            <li><span>Dimensions</span>10 x 10 x 15 cm </li>
                             <li><span>Matériaux</span>60% cotton, 40% polyester</li>
-                            <li><span>Autres Info</span>American heirloom jean shorts pug seitan letterpress</li>
+                            <li><span>Autres Info</span>{{ catalog.composition }}</li>
                         </ul>
                     </div>
                 </div>
