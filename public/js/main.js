@@ -317,7 +317,7 @@
         }
     })
 
-    /* product details slider active */
+    /* catalog details slider active */
     $('.pro-details-slider-active').owlCarousel({
         loop: true,
         nav: true,
@@ -508,8 +508,8 @@
     })
 
 
-    /* Related product active */
-    $('.related-product-active').owlCarousel({
+    /* Related catalog active */
+    $('.related-catalog-active').owlCarousel({
         loop: true,
         nav: false,
         autoplay: false,
@@ -761,7 +761,7 @@
 
 
     /* masonry Active */
-    var isotopFilter = $('.portfolio-menu-active , .product-menu-active');
+    var isotopFilter = $('.portfolio-menu-active , .catalog-menu-active');
     var isotopGrid = $('.grid');
     var isotopGridItemSelector = $('.grid-item');
     var isotopGridItem = '.grid-item';
@@ -963,12 +963,12 @@
     /*---------------------
         Product dec slider
     --------------------- */
-    $('.product-dec-slider').slick({
+    $('.catalog-dec-slider').slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: '<span class="product-dec-icon product-dec-prev"><i class="ti-angle-left"></i></span>',
-        nextArrow: '<span class="product-dec-icon product-dec-next"><i class="ti-angle-right"></i></span>',
+        prevArrow: '<span class="catalog-dec-icon catalog-dec-prev"><i class="ti-angle-left"></i></span>',
+        nextArrow: '<span class="catalog-dec-icon catalog-dec-next"><i class="ti-angle-right"></i></span>',
         responsive: [{
             breakpoint: 768,
             settings: {
@@ -995,16 +995,16 @@
 
 
     /*---------------------
-        product dec slider 2
+        catalog dec slider 2
     --------------------- */
-    $('.product-dec-slider-2').slick({
+    $('.catalog-dec-slider-2').slick({
         infinite: true,
         slidesToShow: 4,
         vertical: true,
         slidesToScroll: 1,
         centerPadding: '60px',
-        prevArrow: '<span class="product-dec-icon product-dec-prev"><i class="ti-angle-up"></i></span>',
-        nextArrow: '<span class="product-dec-icon product-dec-next"><i class="ti-angle-down"></i></span>',
+        prevArrow: '<span class="catalog-dec-icon catalog-dec-prev"><i class="ti-angle-up"></i></span>',
+        nextArrow: '<span class="catalog-dec-icon catalog-dec-next"><i class="ti-angle-down"></i></span>',
         responsive: [{
             breakpoint: 992,
             settings: {
@@ -1038,7 +1038,7 @@
             $('.pro-details-color2-content ul li').removeClass('active');
             $(this).addClass('active');
         });
-    $('.product-sidebar-active').stickySidebar({
+    $('.catalog-sidebar-active').stickySidebar({
         topSpacing: 80,
         bottomSpacing: 30,
         minWidth: 767,

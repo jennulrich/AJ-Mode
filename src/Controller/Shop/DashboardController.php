@@ -29,7 +29,7 @@ class DashboardController extends AbstractController
 
 
         $this->denyAccessUnlessGranted('ROLE_BOUTIQUE');
-        return $this->render('shop/dashboard/index.html.twig', [
+        return $this->render('shop/dashboard/home.html.twig', [
             'controller_name' => 'DashboardController',
             'users' => $users
         ]);

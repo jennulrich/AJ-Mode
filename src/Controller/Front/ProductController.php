@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Product controller.
  *
- * @Route("front/product")
+ * @Route("shop")
  */
 class ProductController extends Controller
 {
@@ -33,8 +33,8 @@ class ProductController extends Controller
     {
         $product = $this->productManager->get($id);
 
-        return $this->render('front/product/detail.html.twig', [
-            "product" => $product
+        return $this->render('front/catalog/detail-catalog.html.twig', [
+            "catalog" => $product
         ]);
     }
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
     {
         $products = $this->productManager->getList();
 
-        return $this->render('front/product/list.html.twig', [
+        return $this->render('front/catalog/list.html.twig', [
             "products" => $products
         ]);
     }

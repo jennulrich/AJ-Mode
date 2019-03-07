@@ -48,7 +48,7 @@ class UserController extends Controller
     {
         $users = $this->userManager->getList();
 
-        return $this->render('admin/user/list.html.twig', [
+        return $this->render('admin/user/list-product-test.html.twig', [
             "users" => $users
         ]);
     }

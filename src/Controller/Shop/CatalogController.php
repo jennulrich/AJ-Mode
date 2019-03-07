@@ -48,7 +48,7 @@ class CatalogController extends Controller
     {
         $catalogs = $this->catalogManager->getList();
 
-        return $this->render('shop/catalog/list.html.twig', [
+        return $this->render('shop/catalog/list-product-test.html.twig', [
             "catalogs" => $catalogs
         ]);
     }

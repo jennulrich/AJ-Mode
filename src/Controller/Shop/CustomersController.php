@@ -49,7 +49,7 @@ class CustomersController extends Controller
     {
         $customers = $this->userManager->getList();
 
-        return $this->render('shop/customers/list.html.twig', [
+        return $this->render('shop/customers/list-product-test.html.twig', [
             "customers" => $customers,
             //"customer" => $customer
         ]);

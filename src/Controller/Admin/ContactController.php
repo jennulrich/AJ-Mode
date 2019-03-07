@@ -59,7 +59,7 @@ class ContactController extends Controller
     {
         $contacts = $this->contactManager->getList();
 
-        return $this->render('admin/contact/list.html.twig', [
+        return $this->render('admin/contact/list-product-test.html.twig', [
             "contacts" => $contacts
         ]);
     }

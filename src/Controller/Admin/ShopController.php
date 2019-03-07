@@ -48,7 +48,7 @@ class ShopController extends Controller
     {
         $shops = $this->shopManager->getList();
 
-        return $this->render('admin/shop/list.html.twig', [
+        return $this->render('admin/shop/list-product-test.html.twig', [
             "shops" => $shops
         ]);
     }

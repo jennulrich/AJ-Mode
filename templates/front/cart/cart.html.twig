@@ -11,7 +11,7 @@
                     <a href="{{ path('home-user') }}">Accueil</a>
                 </li>
                 <li>
-                    <a href="{{ path('shop') }}">Boutiques</a>
+                    <a href="{{ path('front_shop_catalogs') }}">Boutiques</a>
                 </li>
                 <li class="active">Panier</li>
             </ul>
@@ -47,8 +47,8 @@
                             <tbody>
                             <tr>
                                 <td class="cart-img-name">
-                                    <a class="cart-img" href="{{ path('detail-product') }}"><img src="../img/product/product.jpg" alt=""></a>
-                                    <a class="cart-name" href="{{ path('detail-product') }}">Product Name</a>
+                                    <a class="cart-img" href="#"><img src="{{ asset('../img/product/product.jpg') }}" alt=""></a>
+                                    <a class="cart-name" href="#">Product Name</a>
                                 </td>
                                 <td class="cart-price"><span class="amount">$329</span></td>
                                 <td class="cart-quantity">
@@ -63,8 +63,8 @@
                             </tr>
                             <tr>
                                 <td class="cart-img-name">
-                                    <a class="cart-img" href="{{ path('detail-product') }}"><img src="../img/product/product.jpg" alt=""></a>
-                                    <a class="cart-name" href="{{ path('detail-product') }}">Product Name</a>
+                                    <a class="cart-img" href="#"><img src="{{ asset('../img/product/product.jpg') }}" alt=""></a>
+                                    <a class="cart-name" href="#">Product Name</a>
                                 </td>
                                 <td class="cart-price"><span class="amount">$329</span></td>
                                 <td class="cart-quantity">
@@ -87,7 +87,7 @@
                                     <button class="btn-hover">mettre à jour son panier</button>
                                 </div>
                                 <div class="cart-shiping-update">
-                                    <a class="btn-hover" href="{{ path('shop') }}">Continuer son shopping</a>
+                                    <a class="btn-hover" href="{{ path('front_shop_catalogs') }}">Continuer son shopping</a>
                                 </div>
 
                             </div>

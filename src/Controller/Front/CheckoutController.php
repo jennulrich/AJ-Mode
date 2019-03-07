@@ -18,7 +18,7 @@ class CheckoutController extends AbstractController
      */
     public function index()
     {
-        return $this->render('front/checkout.html.twig', [
+        return $this->render('front/cart/checkout.html.twig', [
             'controller_name' => 'CheckoutController',
         ]);
     }
