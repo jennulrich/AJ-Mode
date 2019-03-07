@@ -19,7 +19,7 @@ class CatalogFixtures extends Fixture
         for ($i = 0; $i < 10; $i++) {
             $catalog = new Catalog();
             $catalog->setRef('REF'.$faker->randomNumber(5));
-            $catalog->setTitle($faker->sentence(6));
+            $catalog->setTitle($faker->words(3, true));
             $catalog->setImage($faker->imageUrl());
             $catalog->setDescription($faker->text());
             $catalog->setPrice($faker->numberBetween(1, 500));

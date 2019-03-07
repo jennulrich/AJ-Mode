@@ -1,7 +1,7 @@
 {% extends 'front/layout.html.twig' %}
 
 {% block content %}
-<div class="breadcrumb-area bg-img pt-230 pb-152 default-overlay-2" style="background-image: url('../img/breadcrumb-4.jpg');">
+<div class="breadcrumb-area bg-img pt-230 pb-152 default-overlay-2" style="background-image: url('../img/banner-store.jpg');">
     <div class="container">
         <div class="breadcrumb-content text-center">
             <h2>Nos boutiques</h2>
@@ -22,7 +22,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 grid-item cat1 cat2 cat3 cat4 item-hidden">
                     <div class="portfolio-wrap mb-32">
                         <div class="portfolio-img hover-2">
-                            <img alt="" src="../img/boutique/zara.jpg">
+                            <img alt="" src="{{ asset('img/boutique/zara.jpg') }}">
                             <div class="portfolio-zoom">
                                 <a href="{{ path('shop') }}"><i class="ti-arrow-right"></i></a>
                             </div>
