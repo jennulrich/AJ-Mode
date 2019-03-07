@@ -155,6 +155,9 @@
     "stfalcon/tinymce-bundle": {
         "version": "v2.3.0"
     },
+    "stripe/stripe-php": {
+        "version": "v6.30.1"
+    },
     "swiftmailer/swiftmailer": {
         "version": "v6.1.3"
     },
