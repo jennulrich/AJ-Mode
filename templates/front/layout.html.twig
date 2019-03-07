@@ -16,6 +16,7 @@
         <link href="{{ asset('css/front/style-template.css') }}" rel="stylesheet">
         <link href="{{ asset('css/front/style.css') }}" rel="stylesheet">
     {% endblock %}
+
 </head>
 
 <body class="">
@@ -32,7 +33,7 @@
         {% include 'front/footer.html.twig' %}
     </div>
 
-    {% block javascripts %}
+
         <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
         <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
         <script src="{{ asset('js/jquery-1.12.0.min.js') }}"></script>
@@ -44,7 +45,9 @@
         <script src="{{ asset('js/plugin.js') }}"></script>
         <script src="{{ asset('js/map.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
-    {% endblock %}
+    <script src="https://js.stripe.com/v3/"></script>
+
+    {% block javascripts ''%}
 
 </div>
 </body>

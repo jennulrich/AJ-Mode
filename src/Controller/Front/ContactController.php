@@ -26,7 +26,7 @@ class ContactController extends Controller
     }
 
     /**
-     * @Route("/", name="contact", methods={"GET"})
+     * @Route("/", name="contact")
      * @param Request $request
      * @return Response
      */
