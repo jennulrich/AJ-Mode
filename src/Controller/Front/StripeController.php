@@ -25,7 +25,7 @@ class StripeController extends AbstractController
         );
 
 
-        return $this->render('front/stripe.html.twig', [
+        return $this->render('front/cart/stripe.html.twig', [
             'controller_name' => 'StripeController',
         ]);
     }
