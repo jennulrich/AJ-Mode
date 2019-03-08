@@ -56,22 +56,51 @@
         }
     </style>
 
-
-    <form method="post" id="payment-form">
-        <div class="form-row">
-            <label for="card-element billing-info">
-                Credit or debit card
-            </label>
-            <div id="card-element" class="" style="width: 60% !important;">
-                <!-- A Stripe Element will be inserted here. -->
+    <div class="breadcrumb-area bg-img pt-90 pb-80" style="background-color: #f6f6f6;">
+        <div class="container">
+            <div class="breadcrumb-content breadcrumb-black2 text-center">
+                <h2>Paiement</h2>
+                <ul>
+                    <li>
+                        <a href="{{ path('home-user') }}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('shop') }}">Boutique</a>
+                    </li>
+                    <li class="active">Paiement</li>
+                </ul>
             </div>
-
-            <!-- Used to display form errors. -->
-            <div id="card-errors" role="alert"></div>
+        </div>
+    </div>
+<div class="checkout-area pt-90 pb-90">
+    <div class="container">
+        <div class="parcour-paiement pb-70">
+            <a href="{{ path('cart') }}"><i class="fa fa-shopping-bag parcour-paiement-icone {% if app.request.attributes.get('_route') == 'stripe' %}icone-active{% endif %}"></i></a>
+            <hr class="parcour-paiement-hr {% if app.request.attributes.get('_route') == 'stripe' %}hr-active{% endif %}"/>
+            <a href="{{ path('checkout') }}" ><i class="fa fa-pencil parcour-paiement-icone {% if app.request.attributes.get('_route') == 'stripe' %}icone-active{% endif %}"></i></a>
+            <hr class="parcour-paiement-hr {% if app.request.attributes.get('_route') == 'stripe' %}hr-active{% endif %}"/>
+            <i class="fa fa-credit-card parcour-paiement-icone {% if app.request.attributes.get('_route') == 'stripe' %}icone-active{% endif %}"></i>
+            <hr class="parcour-paiement-hr"/>
+            <i class="fa fa-check parcour-paiement-icone"></i>
         </div>
 
-        <button class="text-uppercase" style="background-color: #4e194b; color: white; border: none; padding: 18px 20px; font-weight: 500; letter-spacing: 1; width: 10%">Payer</button>
-    </form>
+        <form method="post" id="payment-form">
+            <div class="form-row">
+                <label for="card-element billing-info">
+                    Credit or debit card
+                </label>
+                <div id="card-element" class="" style="width: 60% !important;">
+                    <!-- A Stripe Element will be inserted here. -->
+                </div>
+
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
+            </div>
+
+            <button class="text-uppercase" style="background-color: #4e194b; color: white; border: none; padding: 18px 20px; font-weight: 500; letter-spacing: 1; width: 10%">Payer</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
 
 {% block javascripts %}

@@ -1,0 +1,135 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block content %}
+    <div class="shortcode-login-regi-area pt-113 pb-120 black-bg-4 breadcrumb-area default-overlay-2"
+         style="background-image: url('../img/banner-store.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 style="color: white; font-size: 60px; margin-top: 20%;">Le moyen le plus rapide de livrer leurs
+                        commandes à vos clients</h1>
+                </div>
+                <div class="col-lg-6 col-xl-6 col-md-12 col-12">
+                    <div class="pl-30 pr-30">
+                        <div class="login-regi-wrapper">
+                            <div class="login-register-tab-list nav text-center">
+                                <h4 style="width: 100%; color: #882C83;">Devenez partenaire</h4>
+                            </div>
+                            <div class="tab-content login-regi-content">
+                                <div id="login" class="tab-pane active">
+                                    <div class="login-register-form">
+                                        <form action="#" method="post">
+                                            <input type="text" name="name-shop" placeholder="Nom de la boutique">
+                                            <input type="text" name="adress-shop" placeholder="Adresse de la boutique">
+                                            <input type="text" name="lastname" placeholder="Prénom">
+                                            <input type="text" name="name" placeholder="Nom">
+                                            <select name="Votre poste" class="select-login">
+                                                <option value="proprietaire">Propriétaire</option>
+                                                <option value="directeur general">Directeur général</option>
+                                                <option value="gerant">Gérant</option>
+                                                <option value="comptable">Comptable</option>
+                                                <option value="responsable marketing">Responsable marketing</option>
+                                                <option value="employe">Employé(e) de la boutique</option>
+                                                <option value="autre">Autre</option>
+                                            </select>
+                                            <input type="text" name="number-phone"
+                                                   placeholder="Numéro de téléphone portable">
+                                            <input type="number" name="number-shop" placeholder="Nombre de boutique">
+                                            <div class="submit-btn">
+                                                <button class="btn-hover" type="submit">ENVOYER</button>
+                                            </div>
+                                        </form>
+                                        <div class="login-social-wrap">
+                                            <p>Vous avez déjà un compte ? <span style="color:#882C83;">Connexion</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-area pt-80 pb-80 gray-bg-4 container-padding-res">
+        <div class="container">
+            <div class="row grid">
+                <div class="col-lg-6 col-md-12 item-hidden grid-item">
+                    <div style="padding-right: 20px;">
+                        <blockquote class="blockquote-style1 blockquote-shop-partner" style="margin-top: 15px;">Boostez
+                            votre activité
+                        </blockquote>
+                        <p style="text-align: justify;">L&C Mode peut réellement faire la différence pour votre
+                            boutique. En ajoutant vos vêtements et accessoires sur l'application, vous permettez aux
+                            nouveaux clients de les découvrir et à vos habitués d'en profiter plus souvent. Certaines
+                            boutiques ont augmenté leurs ventes, réduit leurs coûts marketing et recruté de nouveaux
+                            employés pour répondre à la demande générée par L&C Mode.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 item-hidden grid-item">
+                    <div>
+                        <blockquote class="blockquote-style1 blockquote-shop-partner" style="margin-top: 15px;">Livrez
+                            plus rapidement
+                        </blockquote>
+                        <p style="text-align: justify;">L&C Mode est une façon rapide de livrer des vêtements à vos
+                            clients. Avec des centaines de coursiers-partenaires sur les routes, vous pouvez livrer une
+                            commande en 20 minutes en moyenne. Vous avez également la possibilité de suivre la commande
+                            depuis sa récupération jusqu'à son arrivée chez le client.</p>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 item-hidden grid-item">
+                    <div class="">
+                        <blockquote class="blockquote-style1 blockquote-shop-partner" style="margin-top: 40px;">Faites
+                            équipe avec des professionnels
+                        </blockquote>
+                        <p style="text-align: justify;">Lorsque vous devenez partenaire L&C Mode, nous sommes dans la
+                            course avec vous. Nous vous aidons à vous lancer, à promouvoir votre catalogue et à
+                            améliorer vos délais de prise en charge et de livraison. Nous continuerons à tester ensemble
+                            différentes manières d'augmenter le nombre de commandes et d'impressionner vos clients, tout
+                            en conservant une organisation simple.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tools-area pb-120">
+        <div class="container">
+            <div class="tools-slider-active owl-carousel height-owl-stage-outer">
+                <div class="row d-flex align-items-center ">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="tools-img">
+                            <img src="{{ asset('img/boutique/zara.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 pt-20">
+                        <div class="tools-content">
+                            <h2 style="color: #4e194b;">ZARA <span
+                                        style="font-size: 15px; color: #0b0b0b;">Paris 9ème</span></h2>
+                            <p>Nous nous sommes vraiment développés depuis que nous livrons avec L&C Mode. C'est comme
+                                si nous avions enfin trouvé le bon filon à exploiter.</p>
+                            <p class="pt-40"><strong>John SMITH</strong> - Propriétaire</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="tools-img">
+                            <img src="{{ asset('img/boutique/desigual.jpg') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tools-content">
+                            <h2 style="color: #4e194b;">DESIGUAL <span style="font-size: 15px; color: #0b0b0b;">Paris 13ème</span>
+                            </h2>
+                            <p style="line-height: 25px;">L&C Mode met à votre disposition un gros volume de commentaires et de données. Grâce à
+                                eux, nous pouvons apporter les changements nécessaires à notre système. Plus ils sont
+                                honnêtes, plus nous nous améliorons.</p>
+                            <p class="pt-40"><strong>Lola FIGUE</strong> - Gérant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

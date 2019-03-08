@@ -302,3 +302,36 @@ ul#menu-profile li.btn-menu-profile a.active, ul#menu-profile li a:hover{
 	margin-left: 20px;
 }
 /**Fin page PROFILE**/
+
+/**Page SHOP SIGNUP**/
+select.select-login{
+	background: #fff;
+	color: #a1a5aa;
+	font-size: 13px;
+	margin: 0 0 15px;
+	height: 45px;
+	border-radius: 0px;
+}
+blockquote.blockquote-shop-partner{
+	font-size: 30px;
+	margin-bottom: 15px;
+	border-left-color: #4e194b;
+}
+.tools-slider-active::before{
+	background-image: url("../../img/pattern-1.png");
+}
+.tools-slider-active .owl-nav div:hover{
+	color: #882C83;
+}
+.padding-modif{
+	padding: 50px 90px 50px;
+}
+/**Fin page SHOP SIGNUP**/
+
+/**Page DELIVERY SIGNUP**/
+.single-shortcode-list li i{
+	margin: 0 5px 0 0;
+	color: #882C83;
+}
+
+/**Fin page DELIVERY SIGNUP**/
