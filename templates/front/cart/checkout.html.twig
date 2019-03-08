@@ -20,7 +20,7 @@
 <div class="checkout-area pt-90 pb-90">
     <div class="container">
         <div class="parcour-paiement pb-70">
-            <i class="fa fa-shopping-bag parcour-paiement-icone {% if app.request.attributes.get('_route') == 'checkout' %}icone-active{% endif %}"></i>
+            <a href="{{ path('cart') }}"><i class="fa fa-shopping-bag parcour-paiement-icone {% if app.request.attributes.get('_route') == 'checkout' %}icone-active{% endif %}"></i></a>
             <hr class="parcour-paiement-hr {% if app.request.attributes.get('_route') == 'checkout' %}hr-active{% endif %}"/>
             <i class="fa fa-pencil parcour-paiement-icone {% if app.request.attributes.get('_route') == 'checkout' %}icone-active{% endif %}"></i>
             <hr class="parcour-paiement-hr"/>
@@ -267,7 +267,7 @@
                         </div>
                     </div>
                     <div class="Place-order mt-25">
-                        <a class="btn-hover" href="#">Passer la commande</a>
+                        <a class="btn-hover" href="{{ path('stripe') }}">Passer la commande</a>
                     </div>
                 </div>
             </div>
