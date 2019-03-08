@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "f5a40baa4743c8dcb1eb4cbc05f3fe52",
@@ -2150,16 +2150,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.30.1",
+            "version": "v6.30.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "570d47d566da6e87413db1fd3a833c42907cb746"
+                "reference": "0d9e2773b1df27d4f0c590b15bed3a1433e0414c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/570d47d566da6e87413db1fd3a833c42907cb746",
-                "reference": "570d47d566da6e87413db1fd3a833c42907cb746",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/0d9e2773b1df27d4f0c590b15bed3a1433e0414c",
+                "reference": "0d9e2773b1df27d4f0c590b15bed3a1433e0414c",
                 "shasum": ""
             },
             "require": {
@@ -2202,7 +2202,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2019-02-16T17:48:38+00:00"
+            "time": "2019-02-27T18:07:30+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
