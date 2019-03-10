@@ -38,6 +38,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function supports(Request $request)
     {
+
         return 'app_login' === $request->attributes->get('_route')
             && $request->isMethod('POST');
     }
@@ -98,6 +99,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             $redirection = new RedirectResponse($this->router->generate('dashboard'));
         } elseif (in_array('ROLE_BOUTIQUE', $rolesTab, true)) {
             $redirection = new RedirectResponse($this->router->generate('shop_dashboard'));
+        } elseif (in_array('ROLE_USER', $rolesTab, true)) {
+            $redirection = new RedirectResponse($this->router->generate('home_user'));
         }
 
         return $redirection;

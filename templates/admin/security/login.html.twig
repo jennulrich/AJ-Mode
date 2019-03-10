@@ -12,7 +12,7 @@
     <div class="ibox-content col-md-6 col-md-offset-3">
         <div class="row">
             <div class="col-md-12"><h3 class="m-t-none m-b">Administration L&C Mode</h3>
-                <form role="form" method="post">
+                <form role="form" method="post" action="{{ path('app_login') }}">
                     {% if error %}
                         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}

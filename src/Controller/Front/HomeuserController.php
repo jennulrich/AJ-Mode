@@ -2,13 +2,16 @@
 
 namespace App\Controller\Front;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeuserController extends AbstractController
 {
     /**
-     * @Route("/home-user", name="home-user")
+     * @Route("/home-user", name="home_user")
+     *
+     * @IsGranted("ROLE_USER")
      */
     public function index()
     {

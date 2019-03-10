@@ -83,6 +83,11 @@ class User implements UserInterface
      */
     private $is_customer;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -328,5 +333,31 @@ class User implements UserInterface
      */
     public function isCustomer() {
         return $this->is_customer;
+    }
+
+    /*
+ * Get isUser
+ *
+ * @return boolean
+ */
+    public function getIsUser(): ?bool
+    {
+        return $this->is_user;
+    }
+
+    public function setIsUser(bool $is_user): self
+    {
+        $this->is_user = $is_user;
+
+        return $this;
+    }
+
+    /*
+     * Get isUser
+     *
+     * @return bool
+     */
+    public function isUser() {
+        return $this->is_user;
     }
 }

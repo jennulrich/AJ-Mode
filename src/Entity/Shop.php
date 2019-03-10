@@ -2,7 +2,10 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\OneToOne;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ShopRepository")
@@ -40,6 +43,18 @@ class Shop
      * @ORM\Column(type="string", length=255)
      */
     private $phone;
+
+    /**
+     * @OneToOne(targetEntity="User", cascade={"persist", "remove"})
+     * @JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
+     */
+    private $user_id;
+
+
+    public function __construct()
+    {
+        $this->user_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,5 +119,21 @@ class Shop
         $this->phone = $phone;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @param mixed $user_id
+     */
+    public function setUserId($user_id): void
+    {
+        $this->user_id = $user_id;
     }
 }
