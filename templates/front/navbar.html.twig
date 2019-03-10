@@ -1,130 +1,176 @@
 <header class="header-area sticky-bar header-black-2 theme-color-hover mobile-menu-black">
-  <div class="container-fluid p-0">
-    <div class="header-wrap header-flex">
-      <div class="logo-menu-wrap">
-        <div class="mt-25 ml-20 mr-100 div-img-logo">
-          <a href="{{ path('home') }}">
-            <img alt="" src="../img/logo_lc_mode.png" class="img-logo">
-          </a>
+    <div class="container-fluid p-0">
+        <div class="header-wrap header-flex">
+            <div class="logo-menu-wrap">
+                <div class="mt-25 ml-20 mr-100 div-img-logo">
+                    <a href="{{ path('home') }}">
+                        <img alt="" src="../img/logo_lc_mode.png" class="img-logo">
+                    </a>
+                </div>
+                <div class="main-menu main-menu-left">
+                    <nav>
+                        <ul>
+                            <li><a href="{{ path('home_user') }}" class="onglet-navbar">Nos boutiques</a>
+                                <ul class="mega-menu mega-menu-width-img mega-hm5-img">
+                                    <li class="menu-img">
+                                        <img alt="" src="../img/product/product-1.jpg">
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title list-shop"><a href="#">Femme</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Desigual</a>
+                                            </li>
+                                            <li class="detail-list-shop"><a
+                                                        href="{{ path('front_shop_catalogs') }}">H&M</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Jennyfer</a>
+                                            </li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Naf
+                                                    Naf</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Pull
+                                                    & Bear</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Tally
+                                                    Weijl</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title list-shop"><a href="#">Homme</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Celio</a>
+                                            </li>
+                                            <li class="detail-list-shop"><a
+                                                        href="{{ path('front_shop_catalogs') }}">H&M</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Jules</a>
+                                            </li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Levis</a>
+                                            </li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Selected</a>
+                                            </li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="mega-menu-title list-shop"><a href="#">Enfant</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Du
+                                                    pareil au même</a></li>
+                                            <li class="detail-list-shop"><a
+                                                        href="{{ path('front_shop_catalogs') }}">H&M</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Okaïdi</a>
+                                            </li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Petit
+                                                    Bateau</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Sergen
+                                                    Major</a></li>
+                                            <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ path('aboutus') }}">à propos</a></li>
+                            <li><a href="{{ path('contact') }}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="header-social-language">
+                <div class="header-social mr-85 main-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="{{ path('profile') }}"><i class="fa fa-user"></i> Mon compte</a></li>
+                            <li><a href="{{ path('cart') }}"><i class="fa fa-shopping-bag"></i> Panier</a>
+                                <ul class="submenu">
+                                    <li>Product name</li>
+                                    <li>Product name</li>
+                                </ul>
+                            </li>
+                            <li style="{% if app.request.attributes.get('_route') == 'app_login' %}display: none;{% endif %}">
+                                <a href="{{ path('app_login') }}">
+                                    <button class="btn btn-deconnexion"><i class="fa fa-sign-out"
+                                                                           aria-hidden="true"></i> Déconnexion
+                                    </button>
+                                </a>
+                            </li>
+                            <li style="{% if app.request.attributes.get('_route') == 'home_user' %}display: none;{% endif %}">
+                                <a href="{{ path('app_login') }}">
+                                    <button class="btn btn-connexion"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        Connexion
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-        <div class="main-menu main-menu-left">
-          <nav>
-            <ul>
-              <li><a href="{{ path('home-user') }}" class="onglet-navbar">Nos boutiques</a>
-                <ul class="mega-menu mega-menu-width-img mega-hm5-img">
-                  <li class="menu-img">
-                    <img alt="" src="../img/product/product-1.jpg">
-                  </li>
-                  <li>
-                    <ul>
-                      <li class="mega-menu-title list-shop"><a href="#">Femme</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Desigual</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Jennyfer</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Naf Naf</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Pull & Bear</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Tally Weijl</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a></li>
+        <div class="mobile-menu-area">
+            <div class="mobile-menu">
+                <nav id="mobile-menu-active">
+                    <ul class="menu-overflow">
+                        <li><a href="{{ path('home_user') }}">Shop</a>
+                            <ul>
+                                <li class="mega-menu-title list-shop"><a href="#">Femme</a>
+                                    <ul>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Desigual</a>
+                                        </li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a>
+                                        </li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Jennyfer</a>
+                                        </li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Naf
+                                                Naf</a></li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Pull &
+                                                Bear</a></li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Tally
+                                                Weijl</a></li>
+                                        <li class="detail-list-shop"><a
+                                                    href="{{ path('front_shop_catalogs') }}">Zara</a></li>
+                                    </ul>
+                                </li>
+                                <li class="mega-menu-title list-shop"><a href="#">Homme</a>
+                                    <ul>
+                                        <li class="mega-menu-title list-shop"><a href="#">Homme</a></li>
+                                        <li class="detail-list-shop"><a
+                                                    href="{{ path('front_shop_catalogs') }}">Celio</a></li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a>
+                                        </li>
+                                        <li class="detail-list-shop"><a
+                                                    href="{{ path('front_shop_catalogs') }}">Jules</a></li>
+                                        <li class="detail-list-shop"><a
+                                                    href="{{ path('front_shop_catalogs') }}">Levis</a></li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Selected</a>
+                                        </li>
+                                        <li class="detail-list-shop"><a
+                                                    href="{{ path('front_shop_catalogs') }}">Zara</a></li>
+                                    </ul>
+                                </li>
+                                <li class="mega-menu-title list-shop"><a href="#">Enfant</a>
+                                    <ul>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Du
+                                                pareil au même</a></li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a>
+                                        </li>
+                                        <li class="detail-list-shop"><a
+                                                    href="{{ path('front_shop_catalogs') }}">Okaïdi</a></li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Petit
+                                                Bateau</a></li>
+                                        <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Sergen
+                                                Major</a></li>
+                                        <li class="detail-list-shop"><a
+                                                    href="{{ path('front_shop_catalogs') }}">Zara</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('aboutus') }}">à propos</a></li>
+                        <li><a href="{{ path('contact') }}">Contact</a></li>
                     </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li class="mega-menu-title list-shop"><a href="#">Homme</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Celio</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Jules</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Levis</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Selected</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li class="mega-menu-title list-shop"><a href="#">Enfant</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Du pareil au même</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Okaïdi</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Petit Bateau</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Sergen Major</a></li>
-                      <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="{{ path('aboutus') }}">à propos</a></li>
-              <li><a href="{{ path('contact') }}">Contact</a></li>
-            </ul>
-          </nav>
+                </nav>
+            </div>
         </div>
-      </div>
-      <div class="header-social-language">
-        <div class="header-social mr-85 main-menu">
-          <nav>
-            <ul>
-              <li><a href="{{ path('profile') }}"><i class="fa fa-user"></i> Mon compte</a></li>
-              <li><a href="{{ path('cart') }}"><i class="fa fa-shopping-bag"></i> Panier</a>
-                <ul class="submenu">
-                  <li>Product name</li>
-                  <li>Product name</li>
-                </ul>
-              </li>
-              <li>
-                <a href="{{ path('front-login') }}"><button class="btn btn-deconnexion"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</button></a>
-              </li>
-              <li>
-                <a href="{{ path('front-login') }}"><button class="btn btn-connexion"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</button></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
     </div>
-    <div class="mobile-menu-area">
-      <div class="mobile-menu">
-        <nav id="mobile-menu-active">
-          <ul class="menu-overflow">
-            <li><a href="{{ path('home-user') }}">Shop</a>
-              <ul>
-                <li class="mega-menu-title list-shop"><a href="#">Femme</a>
-                  <ul>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Desigual</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Jennyfer</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Naf Naf</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Pull & Bear</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Tally Weijl</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a></li>
-                  </ul>
-                </li>
-                <li class="mega-menu-title list-shop"><a href="#">Homme</a>
-                  <ul>
-                    <li class="mega-menu-title list-shop"><a href="#">Homme</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Celio</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Jules</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Levis</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Selected</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a></li>
-                  </ul>
-                </li>
-                <li class="mega-menu-title list-shop"><a href="#">Enfant</a>
-                  <ul>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Du pareil au même</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">H&M</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Okaïdi</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Petit Bateau</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Sergen Major</a></li>
-                    <li class="detail-list-shop"><a href="{{ path('front_shop_catalogs') }}">Zara</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="{{ path('aboutus') }}">à propos</a></li>
-            <li><a href="{{ path('contact') }}">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
 </header>
 <!-- Slider Start -->

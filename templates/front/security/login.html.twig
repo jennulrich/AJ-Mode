@@ -18,9 +18,14 @@
                         <div class="tab-content login-regi-content">
                             <div id="login" class="tab-pane active">
                                 <div class="login-register-form">
-                                    <form action="#" method="post">
-                                        <input type="text" name="user-name" placeholder="Votre nom">
-                                        <input type="password" name="user-password" placeholder="Mot de passe">
+                                    <form role="form" method="post" action="{{ path('app_login') }}">
+                                        {% if error %}
+                                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                        {% endif %}
+
+                                        <input type="email" name="email" placeholder="Email" value="{{ last_username }}" required autofocus>
+                                        <input type="password" name="password" placeholder="Mot de passe" required>
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                                         <div class="submit-btn">
                                             <button class="btn-hover" type="submit">S'identifier</button>
                                         </div>

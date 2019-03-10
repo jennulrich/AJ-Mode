@@ -1,3 +1,4 @@
+{% if is_granted('ROLE_USER') %}
 {% extends 'front/layout.html.twig' %}
 
 {% block content %}
@@ -371,3 +372,4 @@
     </div>
 </div>
 {% endblock %}
+{% endif %}
