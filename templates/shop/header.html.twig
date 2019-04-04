@@ -1,8 +1,8 @@
 <div class="row border-bottom">
-    <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="search_results.html">
+            <form role="search" class="navbar-form-custom" action="#">
                 <div class="form-group">
                     <input type="text" placeholder="Rechercher..." class="form-control" name="top-search" id="top-search">
                 </div>
@@ -24,12 +24,22 @@
     <div class="col-sm-4">
         <h2>
             {% if app.request.attributes.get('_route') == 'shop_dashboard' %}Dashboard{% endif %}
+
+            {# Produits / Catalogue #}
             {% if app.request.attributes.get('_route') == 'shop_catalogs'
             or app.request.attributes.get('_route') == 'shop_view_catalog'
             or app.request.attributes.get('_route') == 'shop_edit_catalog'
             or app.request.attributes.get('_route') == 'shop_add_catalog' %}Catalogue{% endif %}
+            {# End Produits / Catalogue #}
+
+            {# Clients #}
             {% if app.request.attributes.get('_route') == 'shop_customers'
                 or app.request.attributes.get('_route') == 'shop_edit_customer' %}Clients{% endif %}
+            {# End Clients #}
+
+            {# Commandes #}
+            {% if app.request.attributes.get('_route') == 'shop_orders' %}Commandes{% endif %}
+            {# End Commandes #}
         </h2>
         <ol class="breadcrumb">
             <li>
@@ -39,12 +49,21 @@
             </li>
             <li class="active">
                 <strong>
+                    {# Produits / Catalogue #}
                     {% if app.request.attributes.get('_route') == 'shop_catalogs' %}Catalogue des produits{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_view_catalog' %}Détail d'un produit{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_edit_catalog' %}Modification d'un produit{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_add_catalog' %}Ajout d'un produit{% endif %}
+                    {# End Produits / Catalogue #}
+
+                    {# Clients #}
                     {% if app.request.attributes.get('_route') == 'shop_customers' %}Liste des clients{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_edit_customer' %}Modification d'un client{% endif %}
+                    {# End Clients #}
+
+                    {# Commandes #}
+                    {% if app.request.attributes.get('_route') == 'shop_orders' %}Liste des commandes{% endif %}
+                    {# End Commandes #}
                 </strong>
             </li>
         </ol>
@@ -53,9 +72,11 @@
         <div class="title-action">
             <a href="{% if app.request.attributes.get('_route') == 'shop_catalogs' %}{{ path('shop_add_catalog') }}{% endif %}
                     {% if app.request.attributes.get('_route') == 'shop_view_catalog' %}{{ path('shop_catalogs') }}{% endif %}
-                    {% if app.request.attributes.get('_route') == 'shop_edit_customer' %}{{ path('shop_customers') }}{% endif %}
-                    {% if app.request.attributes.get('_route') == 'shop_edit_catalog' %}{{ path('shop_catalogs') }}{% endif %}" class="btn btn-primary"
-                    style="{% if app.request.attributes.get('_route') == 'shop_customers' %}display: none;{% endif %}">
+                    {% if app.request.attributes.get('_route') == 'shop_edit_catalog' %}{{ path('shop_catalogs') }}{% endif %}
+                    {% if app.request.attributes.get('_route') == 'shop_edit_customer' %}{{ path('shop_customers') }}{% endif %}"
+                    class="btn btn-primary"
+                    style="{% if app.request.attributes.get('_route') == 'shop_customers'
+                                or app.request.attributes.get('_route') == 'shop_orders'%}display: none;{% endif %}">
                 {% if app.request.attributes.get('_route') == 'shop_catalogs' %}Ajouter un produit{% endif %}
                 {% if app.request.attributes.get('_route') == 'shop_view_catalog' %}Retour à la liste{% endif %}
                 {% if app.request.attributes.get('_route') == 'shop_add_catalog' %}Retour à la liste{% endif %}
