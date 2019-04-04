@@ -32,7 +32,7 @@
                                                         </td>
                                                         <td class="contact-type"><i class="fa fa-map-marker"> </i>
                                                         </td>
-                                                        <td> {{ shop.address }}</td>
+                                                        <td> {{ shop.userId.address2 }}</td>
                                                         <td class="client-status"><a href=""
                                                                                      class="btn btn-default btn-xs action delete-alert"
                                                                                      data-toggle="modal"
@@ -68,22 +68,22 @@
                                                 Gérant
                                             </strong>
                                             <p>
-                                                {{ shops[key].owner }}
+                                                {{ shops[key].userId.firstname }} {{ shops[key].userId.lastname }}
                                             </p>
                                             <strong>
                                                 Adresse
                                             </strong>
                                             <p>
-                                                {{ shops[key].address }}
+                                                {{ shops[key].userId.address2 }}
                                             </p>
                                             <strong>
                                                 N° de téléphone
                                             </strong>
-                                            <p>{{ shops[key].phone }}</p>
+                                            <p>{{ shops[key].userId.phoneNumber }}</p>
                                             <strong>
                                                 Email
                                             </strong>
-                                            <p>{{ shops[key].email }}</p>
+                                            <p>{{ shops[key].userId.email }}</p>
                                             <a href="{{ path('admin_edit_shop', { 'id': shops[key].id }) }}"
                                                type="button" class="btn btn-primary btn-sm btn-block"><i
                                                         class="fa fa-pencil"></i> Modifier les informations
@@ -127,8 +127,8 @@
                         <div class="text-center" style="margin-bottom: 25px;">
                             <i class="fa fa-exclamation-circle animated bounceIn"
                                style="font-size: 30pt; color: orange;"></i>
-                            <h2>Êtes-vous sûr de vouloir supprimer ce client ?</h2>
-                            <span>Ce client sera définitivement supprimé de la liste.</span>
+                            <h2>Êtes-vous sûr de vouloir supprimer cette boutique ?</h2>
+                            <span>Cette boutique sera définitivement supprimé de la liste.</span>
                         </div>
 
                         <div class="text-center">
