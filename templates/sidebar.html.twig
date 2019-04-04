@@ -94,8 +94,8 @@
                                 or app.request.attributes.get('_route') == 'shop_edit_customer' %}active{% endif %}">
                     <a href="{{ path('shop_customers') }}"><i class="fa fa-users"></i> <span class="nav-label">Clients</span></a>
                 </li>
-                <li>
-                    <a href=""><i class="fa fa-shopping-bag"></i> <span class="nav-label">Commandes</span></a>
+                <li class="{% if app.request.attributes.get('_route') == 'shop_orders' %}active{% endif %}">
+                    <a href="{{ path('shop_orders') }}"><i class="fa fa-shopping-bag"></i> <span class="nav-label">Commandes</span></a>
                 </li>
             </ul>
         </div>

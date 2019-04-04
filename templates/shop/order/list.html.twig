@@ -1,0 +1,119 @@
+{% extends 'shop/layout.html.twig' %}
+
+{% block content %}
+    <div class="ibox-content m-b-sm border-bottom">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="order_id">N° de commande</label>
+                    <input type="text" id="order_id" name="order_id" value="" placeholder="N° de commande"
+                           class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="status">Statut de la commande</label>
+                    <input type="text" id="status" name="status" value="" placeholder="Statut" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="customer">Client</label>
+                    <input type="text" id="customer" name="customer" value="" placeholder="Client" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="date_added">Date de la commande</label>
+                    <div class="input-group date">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="date_added"
+                                                                                                    type="text"
+                                                                                                    class="form-control"
+                                                                                                    value="03/04/2014">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="date_modified">Date d'envoi</label>
+                    <div class="input-group date">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="date_modified"
+                                                                                                    type="text"
+                                                                                                    class="form-control"
+                                                                                                    value="03/06/2014">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label" for="amount">Montant</label>
+                    <input type="text" id="amount" name="amount" value="" placeholder="Montant" class="form-control">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <table class="footable table table-stripped toggle-arrow-tiny" data-filter="#status"
+                           data-page-size="15">
+                        <thead>
+                        <tr>
+                            <th>N° de commande</th>
+                            <th data-hide="phone">Client</th>
+                            <th data-hide="phone">Montant</th>
+                            <th data-hide="phone">Date de commande</th>
+                            <th data-hide="phone,tablet">Date d'envoi</th>
+                            <th data-hide="phone">Statut</th>
+                            <th class="text-right">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>
+                                    {{ order.orderNumber }}
+                                </td>
+                                <td>
+                                    {{ order.userId.firstname }} {{ order.userId.lastname }}
+                                </td>
+                                <td>
+                                    {{ order.amount }} €
+                                </td>
+                                <td>
+                                    {{ order.orderedAt|date("d/m/Y") }}
+                                </td>
+                                <td>
+                                    {{ order.shippedAt|date("d/m/Y") }}
+                                </td>
+                                <td>
+                                    <span class="label label-primary">{{ order.status }}</span>
+                                </td>
+                                <td class="text-right">
+                                    <div class="btn-group">
+                                        <button class="btn-white btn btn-xs">Détail</button>
+                                        <button class="btn-white btn btn-xs">Modifier</button>
+                                        <button class="btn-white btn btn-xs">Supprimer</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

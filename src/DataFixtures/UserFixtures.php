@@ -135,7 +135,9 @@ class UserFixtures extends Fixture
             $user->setIsUser(true);
 
             $manager->persist($user);
-            }
+
+            $this->addReference('order-id-'.$i, $user);
+        }
         $manager->flush();
     }
 }

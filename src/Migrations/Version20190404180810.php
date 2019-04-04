@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190310152737 extends AbstractMigration
+final class Version20190404180810 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,9 +22,8 @@ final class Version20190310152737 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE catalog ADD shop_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE catalog ADD CONSTRAINT FK_1B2C32474D16C4DD FOREIGN KEY (shop_id) REFERENCES shop (id)');
-        $this->addSql('CREATE INDEX IDX_1B2C32474D16C4DD ON catalog (shop_id)');
+        $this->addSql('CREATE TABLE orders (id INT AUTO_INCREMENT NOT NULL, order_number VARCHAR(255) NOT NULL, amount INT NOT NULL, ordered_at DATETIME NOT NULL, shipped_at DATETIME NOT NULL, status VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE = InnoDB');
+        $this->addSql('DROP TABLE `order`');
     }
 
     public function down(Schema $schema) : void
@@ -32,8 +31,7 @@ final class Version20190310152737 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE catalog DROP FOREIGN KEY FK_1B2C32474D16C4DD');
-        $this->addSql('DROP INDEX IDX_1B2C32474D16C4DD ON catalog');
-        $this->addSql('ALTER TABLE catalog DROP shop_id');
+        $this->addSql('CREATE TABLE `order` (id INT AUTO_INCREMENT NOT NULL, order_number VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci, amount INT NOT NULL, ordered_at DATETIME NOT NULL, shipped_at DATETIME NOT NULL, status VARCHAR(255) NOT NULL COLLATE utf8mb4_unicode_ci, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB COMMENT = \'\' ');
+        $this->addSql('DROP TABLE orders');
     }
 }
