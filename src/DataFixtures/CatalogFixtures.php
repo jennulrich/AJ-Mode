@@ -4,11 +4,12 @@ namespace App\DataFixtures;
 
 use App\Entity\Catalog;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Faker;
 
-class CatalogFixtures extends Fixture
+class CatalogFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -26,8 +27,17 @@ class CatalogFixtures extends Fixture
             $catalog->setStock($faker->numberBetween(1, 50));
             $catalog->setCategory($faker->sentence(1));
             $catalog->setComposition($faker->sentence(3));
+            $catalog->setShop($this->getReference('catalog-id-'.$i));
+
             $manager->persist($catalog);
         }
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return array(
+            ShopFixtures::class,
+        );
     }
 }

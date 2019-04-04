@@ -9,6 +9,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * User controller.
@@ -20,9 +22,12 @@ class CatalogController extends Controller
     /** @var CatalogManager */
     private $catalogManager;
 
-    public function __construct(CatalogManager $catalogManager)
+    private $security;
+
+    public function __construct(CatalogManager $catalogManager, Security $security)
     {
         $this->catalogManager = $catalogManager;
+        $this->security = $security;
     }
 
     /**
@@ -32,6 +37,8 @@ class CatalogController extends Controller
      */
     public function viewAction(int $id): Response
     {
+        //$user= $this->container->get('security.context')->getToken()->getUser();
+
         $catalog = $this->catalogManager->get($id);
 
         return $this->render('shop/catalog/detail.html.twig', [
@@ -51,6 +58,7 @@ class CatalogController extends Controller
         return $this->render('shop/catalog/list.html.twig', [
             "catalogs" => $catalogs
         ]);
+
     }
 
     /**
@@ -61,6 +69,8 @@ class CatalogController extends Controller
     public function addAction(Request $request): Response
     {
         $catalog = new Catalog();
+
+        $user = $this->security->getUser();
 
         $form = $this->createForm(CatalogType::class, $catalog);
         $form->handleRequest($request);

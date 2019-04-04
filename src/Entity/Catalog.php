@@ -56,6 +56,13 @@ class Catalog
      */
     private $composition;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Shop", inversedBy="shop", cascade={"remove", "persist"})
+     * @ORM\JoinColumn(name="shop_id", referencedColumnName="id")
+     */
+    private $shop;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -155,5 +162,21 @@ class Catalog
         $this->composition = $composition;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShop()
+    {
+        return $this->shop;
+    }
+
+    /**
+     * @param mixed $shop
+     */
+    public function setShop($shop): void
+    {
+        $this->shop = $shop;
     }
 }
