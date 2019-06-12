@@ -11,7 +11,7 @@ class HomeuserController extends AbstractController
     /**
      * @Route("/home-user", name="home_user")
      *
-     * @IsGranted("ROLE_USER")
+     * @IsGranted("ROLE_CLIENT")
      */
     public function index()
     {
