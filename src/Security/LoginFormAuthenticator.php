@@ -99,10 +99,9 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             $redirection = new RedirectResponse($this->router->generate('dashboard'));
         } elseif (in_array('ROLE_BOUTIQUE', $rolesTab, true)) {
             $redirection = new RedirectResponse($this->router->generate('shop_dashboard'));
-        } elseif (in_array('ROLE_USER', $rolesTab, true)) {
+        } elseif (in_array('ROLE_CLIENT', $rolesTab, true)) {
             $redirection = new RedirectResponse($this->router->generate('home_user'));
         }
-
         return $redirection;
     }
 

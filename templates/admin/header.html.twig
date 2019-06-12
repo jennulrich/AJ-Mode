@@ -23,7 +23,7 @@
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
         <h2>
-            {% if app.request.attributes.get('_route') == 'home' %}Dashboard{% endif %}
+            {% if app.request.attributes.get('_route') == 'dashboard' %}Dashboard{% endif %}
             {% if app.request.attributes.get('_route') == 'admin_users'
                 or app.request.attributes.get('_route') == 'admin_view_user'
                 or app.request.attributes.get('_route') == 'admin_edit_user'
@@ -73,7 +73,8 @@
                     {% if app.request.attributes.get('_route') == 'admin_view_mail' %}{{ path('admin_mails') }}{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_mails' %}{{ path('admin_compose_mail') }}{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_sent_mails' %}{{ path('admin_mails') }}{% endif %}
-                    {% if app.request.attributes.get('_route') == 'admin_edit_shop' %}{{ path('admin_shops') }}{% endif %}" class="btn btn-primary">
+                    {% if app.request.attributes.get('_route') == 'admin_edit_shop' %}{{ path('admin_shops') }}{% endif %}" class="btn btn-primary"
+                    style="{% if app.request.attributes.get('_route') == 'dashboard' %}display: none;{% endif %}">
                 {% if app.request.attributes.get('_route') == 'admin_users' %}Ajouter un utilisateur{% endif %}
                 {% if app.request.attributes.get('_route') == 'admin_add_user' %}Retour à la liste{% endif %}
                 {% if app.request.attributes.get('_route') == 'admin_view_user' %}Retour à la liste{% endif %}
