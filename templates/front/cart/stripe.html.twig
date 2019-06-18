@@ -84,21 +84,23 @@
             <i class="fa fa-check parcour-paiement-icone"></i>
         </div>
 
-        <form method="post" id="payment-form">
-            <div class="form-row">
-                <label for="card-element billing-info">
-                    Credit or debit card
-                </label>
-                <div id="card-element" class="" style="width: 60% !important;">
-                    <!-- A Stripe Element will be inserted here. -->
+        <div class="containerPaiement">
+            <div class="row">
+                <div class="offset-2 col-lg-8" style="height: 260px;">
+                    <form method="#" action="{{ path('validation') }}" id="payment-form">
+                        <div class="form-row">
+                            <h3 id="titrePaiement">Carte de crédit ou de débit</h3>
+                            <div id="card-element">
+                                <!-- A Stripe Element will be inserted here. -->
+                            </div>
+                            <!-- Used to display form errors. -->
+                            <div id="card-errors" role="alert"></div>
+                        </div>
+                        <a href="{{ path('validation') }}"><button id="btnPaiement" class="text-uppercase">Payer</button></a>
+                    </form>
                 </div>
-
-                <!-- Used to display form errors. -->
-                <div id="card-errors" role="alert"></div>
             </div>
-
-            <button class="text-uppercase" style="background-color: #4e194b; color: white; border: none; padding: 18px 20px; font-weight: 500; letter-spacing: 1; width: 10%">Payer</button>
-        </form>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -141,7 +143,7 @@
         });
 
         // Create a token or display an error when the form is submitted.
-        var form = document.getElementById('payment-form');
+       var form = document.getElementById('payment-form');
         form.addEventListener('submit', function(event) {
             event.preventDefault();
 

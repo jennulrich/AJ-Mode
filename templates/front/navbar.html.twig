@@ -115,6 +115,7 @@
                                           or app.request.attributes.get('_route') == 'front_shop_view_catalog'
                                           or app.request.attributes.get('_route') == 'checkout'
                                           or app.request.attributes.get('_route') == 'stripe'
+                                          or app.request.attributes.get('_route') == 'validation'
                                              %}display: none;{% endif %}">
                                 <a href="{{ path('app_login') }}">
                                     <button class="btn btn-connexion"><i class="fa fa-sign-in" aria-hidden="true"></i>
