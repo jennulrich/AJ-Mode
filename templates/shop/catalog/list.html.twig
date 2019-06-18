@@ -60,12 +60,15 @@
                                    title="Editer"><i class="fa fa-edit"></i></a>
                             </li>
                             <li style="display: inline-block; padding: 0 5px;">
-                                <a href=""
-                                   class="action delete-alert" data-toggle="modal" data-target="#{{ catalog.id }}"><i class="fa fa-trash"></i></a>
+                                <a href="{{ path('shop_delete_catalog', { 'id': catalog.id}) }}"
+                                   class="action delete-alert" data-toggle="modal" {#data-target="#{{ catalog.id }}"#}><i class="fa fa-trash"></i></a>
                             </li>
                         </ul>
                     </td>
                 </tr>
+
+                    {{ dump(catalog.id) }}
+
                 {% endif %}
             {% endfor %}
             </tbody>
@@ -100,7 +103,7 @@
         }
     </style>
     <!-- Modal confirmation de suppression -->
-    {% for catalog in catalogs %}
+    {#{% for catalog in catalogs %}
         <div class="modal inmodal" id="{{ catalog.id }}" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog animated fadeIn">
                 <div class="modal-content animated fadeIn">
@@ -120,5 +123,5 @@
                 </div>
             </div>
         </div>
-    {% endfor %}
+    {% endfor %}#}
 {% endblock %}

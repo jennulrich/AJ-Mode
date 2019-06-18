@@ -36,6 +36,9 @@
                 or app.request.attributes.get('_route') == 'admin_compose_mail'
                 or app.request.attributes.get('_route') == 'admin_sent_mails'
                 or app.request.attributes.get('_route') == 'admin_view_sent_mail' %}Emails{% endif %}
+            {% if app.request.attributes.get('_route') == 'admin_new_shops' %}Boutique - Inscription{% endif %}
+            {% if app.request.attributes.get('_route') == 'admin_new_runners' %}Coursier - Inscription{% endif %}
+            {% if app.request.attributes.get('_route') == 'admin_runners' %}Coursiers{% endif %}
         </h2>
         <ol class="breadcrumb">
             <li>
@@ -58,6 +61,9 @@
                         or app.request.attributes.get('_route') == 'admin_view_sent_mail' %}Détail d'un email{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_compose_mail' %}Rédaction d'un email{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_sent_mails' %}Emails envoyés{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_new_shops' %}Demande d'inscription{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_new_runners' %}Demande d'inscription{% endif %}
+                    {% if app.request.attributes.get('_route') == 'admin_runners' %}Liste des coursiers{% endif %}
                 </strong>
             </li>
         </ol>
@@ -74,7 +80,9 @@
                     {% if app.request.attributes.get('_route') == 'admin_mails' %}{{ path('admin_compose_mail') }}{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_sent_mails' %}{{ path('admin_mails') }}{% endif %}
                     {% if app.request.attributes.get('_route') == 'admin_edit_shop' %}{{ path('admin_shops') }}{% endif %}" class="btn btn-primary"
-                    style="{% if app.request.attributes.get('_route') == 'dashboard' %}display: none;{% endif %}">
+                    style="{% if app.request.attributes.get('_route') == 'dashboard'
+                                or app.request.attributes.get('_route') == 'admin_new_runners'
+                                or app.request.attributes.get('_route') == 'admin_new_shops' %}display: none;{% endif %}">
                 {% if app.request.attributes.get('_route') == 'admin_users' %}Ajouter un utilisateur{% endif %}
                 {% if app.request.attributes.get('_route') == 'admin_add_user' %}Retour à la liste{% endif %}
                 {% if app.request.attributes.get('_route') == 'admin_view_user' %}Retour à la liste{% endif %}
@@ -85,6 +93,7 @@
                 {% if app.request.attributes.get('_route') == 'admin_mails' %}Ecrire un email{% endif %}
                 {% if app.request.attributes.get('_route') == 'admin_view_mail' %}Retour à la liste{% endif %}
                 {% if app.request.attributes.get('_route') == 'admin_sent_mails' %}Retour à la boite de réception{% endif %}
+                {% if app.request.attributes.get('_route') == 'admin_runners' %}Ajouter un coursier{% endif %}
             </a>
         </div>
     </div>
