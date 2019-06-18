@@ -254,6 +254,31 @@ hr.hr-active{
 }
 /**Fin page CHECKOUT**/
 
+/**Page STRIPE**/
+div.containerPaiement{
+	text-align: center;
+}
+#btnPaiement{
+	background-color: #4e194b;
+	color: white;
+	border: none;
+	padding: 15px 20px;
+	font-weight: 500;
+	width: 165px;
+	cursor: pointer;
+	margin-top: 15px;
+}
+div#card-element{
+	width: 100% !important;
+	margin-bottom: 30px;
+}
+h3#titrePaiement{
+	margin-bottom: 30px;
+	width: 100%;
+}
+/**Fin Page STRIPE**/
+
+
 /**Page LOGIN**/
 .login-register-tab-list a.active h4{
 	border-bottom: 3px solid #4e194b;

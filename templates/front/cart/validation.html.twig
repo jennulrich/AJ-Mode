@@ -1,0 +1,135 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block content %}
+    <div class="breadcrumb-area bg-img pt-90 pb-80" style="background-color: #f6f6f6;">
+        <div class="container">
+            <div class="breadcrumb-content breadcrumb-black2 text-center">
+                <h2>Paiement accepté</h2>
+                <ul>
+                    <li>
+                        <a href="{{ path('home_user') }}">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('shop') }}">Boutique</a>
+                    </li>
+                    <li class="active">Paiement accepté</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="checkout-area pt-90 pb-90">
+        <div class="container">
+            <div class="parcour-paiement pb-70">
+                <a href="{{ path('cart') }}"><i class="fa fa-shopping-bag parcour-paiement-icone {% if app.request.attributes.get('_route') == 'validation' %}icone-active{% endif %}"></i></a>
+                <hr class="parcour-paiement-hr {% if app.request.attributes.get('_route') == 'validation' %}hr-active{% endif %}"/>
+                <i class="fa fa-pencil parcour-paiement-icone {% if app.request.attributes.get('_route') == 'validation' %}icone-active{% endif %}"></i>
+                <hr class="parcour-paiement-hr {% if app.request.attributes.get('_route') == 'validation' %}hr-active{% endif %}"/>
+                <i class="fa fa-credit-card parcour-paiement-icone {% if app.request.attributes.get('_route') == 'validation' %}icone-active{% endif %}"></i>
+                <hr class="parcour-paiement-hr {% if app.request.attributes.get('_route') == 'validation' %}hr-active{% endif %}"/>
+                <i class="fa fa-check parcour-paiement-icone {% if app.request.attributes.get('_route') == 'validation' %}icone-active{% endif %}"></i>
+            </div>
+
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Paiement accepté !</h4>
+                <p>Votre commande est validée, vous allez bientôt recevoir un email de confirmation.</p>
+                <p><a href="{{ path('profile') }}" style="text-decoration: underline;">Poursuivre l'état de vortre commande</a></p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="blockquote-style-wrap">
+                        <blockquote class="blockquote-style2 text-center">
+                            <img alt="" src="{{ asset('img/carte-bancaire.png') }}" height="30px">
+                            <div class="single-client-info" style="text-align: left;">
+                                <div class="dropcap-title text-center mb-30">
+                                    <p style="width: 100%;">Ma carte bancaire</p>
+                                </div>
+                                <div class="client-info-title">
+                                    <span>Titulaire</span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>Smith Lola </p>
+                                </div>
+                            </div>
+                            <div class="single-client-info" style="text-align: left;">
+                                <div class="client-info-title">
+                                    <span>Numéro</span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>**** **** **** 4242</p>
+                                </div>
+                            </div>
+                            <div class="single-client-info" style="text-align: left;">
+                                <div class="client-info-title">
+                                    <span>Expiration</span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>02/22</p>
+                                </div>
+                            </div>
+                            <div class="single-client-info" style="text-align: left;">
+                                <div class="client-info-title">
+                                    <span>CVC </span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>615</p>
+                                </div>
+                            </div>
+                            <div class="single-client-info pb-20" style="text-align: left;">
+                                <div class="client-info-title">
+                                    <span>Code postal </span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>75009 </p>
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="blockquote-style-wrap">
+                        <blockquote class="blockquote-style2 text-center">
+                            <img alt="" src="{{ asset('img/carnet-adresse.png') }}" height="30px">
+                            <div class="single-client-info" style="text-align: left;">
+                                <div class="dropcap-title text-center mb-30">
+                                    <p style="width: 100%;">Mon adresse de livraison</p>
+                                </div>
+                                <div class="client-info-title">
+                                    <span>Nom </span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>Smith</p>
+                                </div>
+                            </div>
+                            <div class="single-client-info" style="text-align: left;">
+                                <div class="client-info-title">
+                                    <span>Téléphone </span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>+33 6 76 43 52 89</p>
+                                </div>
+                            </div>
+                            <div class="single-client-info" style="text-align: left;">
+                                <div class="client-info-title">
+                                    <span>Email </span>
+                                </div>
+                                <div class="client-info-dec">
+                                    <p>smith.lola@gmail.fr</p>
+                                </div>
+                            </div>
+                            <div class="single-client-info pb-20" style="text-align: left;">
+                                <div class="client-info-title">
+                                    <span>Adresse </span>
+                                </div>
+                                <div class="client-info-dec" style="margin-bottom: 17px;">
+                                    <p>5 rue des poissonier, 95160 Cergy</p>
+                                    <p>6 eme étage, porte de droite, <em>code : 9743</em></p>
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
