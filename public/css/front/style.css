@@ -276,6 +276,12 @@ h3#titrePaiement{
 	margin-bottom: 30px;
 	width: 100%;
 }
+div.container-logo-carte{
+	display: inline-block;
+}
+div.container-logo-carte img{
+	margin: 0 20px;
+}
 /**Fin Page STRIPE**/
 
 
