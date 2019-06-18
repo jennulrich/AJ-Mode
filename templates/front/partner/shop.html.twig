@@ -18,27 +18,33 @@
                             <div class="tab-content login-regi-content">
                                 <div id="login" class="tab-pane active">
                                     <div class="login-register-form">
-                                        <form action="#" method="post">
-                                            <input type="text" name="name-shop" placeholder="Nom de la boutique">
-                                            <input type="text" name="adress-shop" placeholder="Adresse de la boutique">
-                                            <input type="text" name="lastname" placeholder="Prénom">
-                                            <input type="text" name="name" placeholder="Nom">
-                                            <select name="Votre poste" class="select-login">
-                                                <option value="proprietaire">Propriétaire</option>
-                                                <option value="directeur general">Directeur général</option>
-                                                <option value="gerant">Gérant</option>
-                                                <option value="comptable">Comptable</option>
-                                                <option value="responsable marketing">Responsable marketing</option>
-                                                <option value="employe">Employé(e) de la boutique</option>
-                                                <option value="autre">Autre</option>
-                                            </select>
-                                            <input type="text" name="number-phone"
-                                                   placeholder="Numéro de téléphone portable">
-                                            <input type="number" name="number-shop" placeholder="Nombre de boutique">
-                                            <div class="submit-btn">
-                                                <button class="btn-hover" type="submit">ENVOYER</button>
-                                            </div>
-                                        </form>
+                                        {{ form_start(form) }}
+                                        {{ form_errors(form) }}
+                                        <div class="formulaire">
+                                            {{ form_row(form.shop_name) }}
+                                        </div>
+                                        <div class="formulaire">
+                                            {{ form_row(form.address) }}
+                                        </div>
+                                        <div class="formulaire">
+                                            {{ form_row(form.firstname) }}
+                                        </div>
+                                        <div class="formulaire">
+                                            {{ form_row(form.lastname) }}
+                                        </div>
+                                        <div class="formulaire">
+                                            {{ form_row(form.status) }}
+                                        </div>
+                                        <div class="formulaire">
+                                            {{ form_row(form.phone) }}
+                                        </div>
+                                        <div class="formulaire">
+                                            {{ form_row(form.shop_number) }}
+                                        </div>
+                                        <div class="submit-btn">
+                                            <button class="btn-hover" type="submit">ENVOYER</button>
+                                        </div>
+                                        {{ form_end(form) }}
                                         <div class="login-social-wrap">
                                             <p>Vous avez déjà un compte ? <span style="color:#882C83;">Connexion</span>
                                             </p>

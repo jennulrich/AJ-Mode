@@ -26,7 +26,7 @@ class CatalogType extends AbstractType
             ->add('shop', EntityType::class, array(
                 'class' => Shop::class,
                 'choice_label' => 'shop_name',
-                'label' => 'test'
+                'label' => 'test',
             ))
             ->add('ref',TextType::class, array('label' => 'Référence'))
             ->add('title', TextType::class, array('label' => 'Nom du produit'))

@@ -33,14 +33,14 @@
                         or app.request.attributes.get('_route') == 'admin_edit_shop' %}active{% endif %}">
                 <a href="{{ path('admin_shops') }}"><i class="fa fa-shopping-bag"></i> <span class="nav-label">Boutiques</span></a>
             </li>
-            <li>
-                <a href=""><i class="fa fa-bicycle"></i> <span class="nav-label">Coursiers</span></a>
+            <li class="{% if app.request.attributes.get('_route') == 'admin_runners' %}active{% endif %}">
+                <a href="{{ path('admin_runners') }}"><i class="fa fa-bicycle"></i> <span class="nav-label">Coursiers</span></a>
             </li>
-            <li class="">
-                <a href=""><i class="fa fa-shopping-bag"></i> <span class="nav-label">Boutique - Inscription</span></a>
+            <li class="{% if app.request.attributes.get('_route') == 'admin_new_shops' %}active{% endif %}">
+                <a href="{{ path('admin_new_shops') }}"><i class="fa fa-shopping-bag"></i> <span class="nav-label">Boutique - Inscription</span></a>
             </li>
-            <li class="">
-                <a href=""><i class="fa fa-bicycle"></i> <span class="nav-label">Coursier - Inscription</span></a>
+            <li class="{% if app.request.attributes.get('_route') == 'admin_new_runners' %}active{% endif %}">
+                <a href="{{ path('admin_new_runners') }}"><i class="fa fa-bicycle"></i> <span class="nav-label">Coursier - Inscription</span></a>
             </li>
             <li class="{% if app.request.attributes.get('_route') == 'admin_mails'
                 or app.request.attributes.get('_route') == 'admin_view_mail'

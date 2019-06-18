@@ -18,10 +18,12 @@ class StripeController extends AbstractController
             "amount" => 2000,
             "currency" => "eur",
             //"source" => $request->request->get('stripeToken'), // obtained with Stripe.js
-            "source" => 'tok_mastercard', // obtained with Stripe.js
+            //"source" => 'tok_mastercard', // obtained with Stripe.js
+            "source" => 'tok_visa', // obtained with Stripe.js
             "description" => "Paiement de test LC Mode"
         ], [
-            "idempotency_key" => "buG5xdrrcRPMGxju",]
+           // "idempotency_key" => "buG5xdrrcRPMGxju",]
+            "idempotency_key" => "pn1rxufHP1bSEEQI",]
         );
 
 

@@ -1,0 +1,102 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block content %}
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="input-group">
+                            <input type="text" placeholder="Rechercher une boutique" class="input form-control" id="filter">
+                            <span class="input-group-btn">
+                                        <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> Rechercher</button>
+                                </span>
+                        </div>
+                        <div class="clients-list">
+                            <ul class="nav nav-tabs">
+                                <!--<span class="pull-right small text-muted">1406 Elements</span>-->
+                                <li class="active"><a data-toggle="tab" href="#tab-1"><i class="fa fa-shopping-bag"></i>
+                                        Boutiques</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane active">
+                                    <div class="full-height-scroll">
+                                        <div class="table-responsive">
+                                            <table class="table table-stripped footable" data-filter=#filter>
+                                                <tbody>
+                                                {#{% for shop in shops %}#}
+                                                    <tr>
+                                                        <td>
+                                                            <a data-toggle="tab" href="#"
+                                                               class="client-link"></a>
+                                                        </td>
+                                                        <td class="contact-type"><i class="fa fa-map-marker"> </i>
+                                                        </td>
+                                                        <td></td>
+                                                        <td class="client-status"><a href=""
+                                                                                     class="btn btn-default btn-xs action delete-alert"
+                                                                                     data-toggle="modal"
+                                                                                     data-target="">Supprimer</a>
+                                                        </td>
+                                                    </tr>
+                                                {#{% endfor %}#}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div class="tab-content">
+                            {% for key in shops|keys %}
+                                <div id="contact-{{ shops[key].id }}"
+                                     class="tab-pane {% if key == 0 %}active{% endif %}">
+                                    <div class="row m-b-lg">
+                                        <div class="col-lg-12 text-center">
+                                            <h2>{{ shops[key].shopName }}</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <strong>
+                                                Gérant
+                                            </strong>
+                                            <p>
+                                                {{ shops[key].userId.firstname }} {{ shops[key].userId.lastname }}
+                                            </p>
+                                            <strong>
+                                                Adresse
+                                            </strong>
+                                            <p>
+                                                {{ shops[key].userId.address2 }}
+                                            </p>
+                                            <strong>
+                                                N° de téléphone
+                                            </strong>
+                                            <p>{{ shops[key].userId.phoneNumber }}</p>
+                                            <strong>
+                                                Email
+                                            </strong>
+                                            <p>{{ shops[key].userId.email }}</p>
+                                            <a href="{{ path('admin_edit_shop', { 'id': shops[key].id }) }}"
+                                               type="button" class="btn btn-primary btn-sm btn-block"><i
+                                                        class="fa fa-pencil"></i> Modifier les informations
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
