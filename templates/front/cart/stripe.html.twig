@@ -87,9 +87,14 @@
         <div class="containerPaiement">
             <div class="row">
                 <div class="offset-2 col-lg-8" style="height: 260px;">
+                    <h3 id="titrePaiement">Carte de crédit ou de débit</h3>
+                    <div class="container-logo-carte">
+                        <img src="{{ asset('img/logo/visa.png') }}" height="25px">
+                        <img src="{{ asset('img/logo/mastercard.png') }}" height="25px">
+                        <img src="{{ asset('img/logo/visa-electron.jpeg') }}" height="25px">
+                    </div>
                     <form method="#" action="{{ path('validation') }}" id="payment-form">
                         <div class="form-row">
-                            <h3 id="titrePaiement">Carte de crédit ou de débit</h3>
                             <div id="card-element">
                                 <!-- A Stripe Element will be inserted here. -->
                             </div>
