@@ -80,21 +80,42 @@
                 <div class="header-social mr-85 main-menu">
                     <nav>
                         <ul>
-                            <li><a href="{{ path('profile') }}"><i class="fa fa-user"></i> Mon compte</a></li>
-                            <li><a href="{{ path('cart') }}"><i class="fa fa-shopping-bag"></i> Panier</a>
-                                <ul class="submenu">
-                                    <li>Product name</li>
-                                    <li>Product name</li>
-                                </ul>
+                            <li style="{% if app.request.attributes.get('_route') == 'app_login'
+                                          or app.request.attributes.get('_route') == 'home'
+                                          or app.request.attributes.get('_route') == 'delivery-signup'
+                                       %}display: none;{% endif %}">
+                                <a href="{{ path('profile') }}"><i class="fa fa-user"></i> Mon compte</a>
                             </li>
-                            <li style="{% if app.request.attributes.get('_route') == 'app_login' %}display: none;{% endif %}">
+
+                            <li style="{% if app.request.attributes.get('_route') == 'app_login'
+                                          or app.request.attributes.get('_route') == 'home'
+                                          or app.request.attributes.get('_route') == 'delivery-signup'
+                                       %}display: none;{% endif %}">
+                                <a href="{{ path('cart') }}"><i class="fa fa-shopping-bag"></i> Panier</a>
+                                    <ul class="submenu">
+                                        <li>Product name</li>
+                                        <li>Product name</li>
+                                    </ul>
+                            </li>
+                            <li style="{% if app.request.attributes.get('_route') == 'app_login'
+                                          or app.request.attributes.get('_route') == 'home'
+                                          or app.request.attributes.get('_route') == 'delivery-signup'
+                                            %}display: none;{% endif %}">
                                 <a href="{{ path('app_login') }}">
                                     <button class="btn btn-deconnexion"><i class="fa fa-sign-out"
                                                                            aria-hidden="true"></i> Déconnexion
                                     </button>
                                 </a>
                             </li>
-                            <li style="{% if app.request.attributes.get('_route') == 'home_user' %}display: none;{% endif %}">
+                            <li style="{% if app.request.attributes.get('_route') == 'home_user'
+                                          or app.request.attributes.get('_route') == 'contact'
+                                          or app.request.attributes.get('_route') == 'aboutus'
+                                          or app.request.attributes.get('_route') == 'profile'
+                                          or app.request.attributes.get('_route') == 'cart'
+                                          or app.request.attributes.get('_route') == 'front_shop_view_catalog'
+                                          or app.request.attributes.get('_route') == 'checkout'
+                                          or app.request.attributes.get('_route') == 'stripe'
+                                             %}display: none;{% endif %}">
                                 <a href="{{ path('app_login') }}">
                                     <button class="btn btn-connexion"><i class="fa fa-sign-in" aria-hidden="true"></i>
                                         Connexion
